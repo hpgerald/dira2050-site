@@ -1,0 +1,4 @@
+id,name,short_name,summary,color,icon,order
+economy,"Strong, Inclusive and Competitive Economy",Economy,"A diversified, resilient and competitive upper-middle-income economy driven by macroeconomic stability, fiscal sustainability, a robust private sector and export-led industrialisation.",#1EB53A,economy,1
+people,"Human Capabilities and Social Development",People,"A healthy, well-educated, skilled, cohesive and socially protected society, with strong emphasis on STEM, universal health coverage, and inclusion of vulnerable groups.",#FCD116,people,2
+environment,"Environmental Integrity and Climate Change Resilience",Environment,"Sustainable management of natural resources including biodiversity, wetlands and water, pollution and land management, and resilience to climate change.",#00A3DD,environment,3
