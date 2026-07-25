@@ -1,0 +1,22 @@
+{
+  "name": "dira2050-explained",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A citizen-friendly explainer for the Tanzania Development Vision 2050 (Dira 2050).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

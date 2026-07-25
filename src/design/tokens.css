@@ -1,0 +1,104 @@
+/* ============================================================
+   Dira 2050 — Design tokens
+   Editorial system inspired by Pentagram: neo-grotesque type, strict
+   grid, thin rules, generous whitespace. Monochrome only — black,
+   white, grey. Meaning comes from typography and layout, not colour.
+   ============================================================ */
+:root {
+  /* --- Monochrome palette --- */
+  --black:  #111111;
+  --white:  #ffffff;
+  --g-900:  #1a1a1a;
+  --g-700:  #3d3d3d;
+  --g-500:  #767676;
+  --g-400:  #9a9a9a;
+  --g-300:  #c9c9c9;
+  --g-200:  #e4e4e4;
+  --g-100:  #f3f3f1;
+
+  --ink:       var(--black);
+  --ink-soft:  var(--g-700);
+  --ink-faint: var(--g-500);
+  --bg:        var(--white);
+  --bg-sunken: var(--g-100);
+  --surface:   var(--white);
+  --line:      var(--g-200);
+  --line-strong: var(--black);
+
+  /* --- Typography: neo-grotesque --- */
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans);
+
+  /* Editorial type scale — large, tight, confident */
+  --fs-100: 0.75rem;
+  --fs-200: 0.8125rem;
+  --fs-300: 1rem;                                     /* body */
+  --fs-400: 1.125rem;
+  --fs-500: clamp(1.35rem, 1.15rem + 0.9vw, 1.75rem);
+  --fs-600: clamp(1.8rem, 1.4rem + 2vw, 2.85rem);
+  --fs-700: clamp(2.6rem, 1.9rem + 3.6vw, 4.5rem);
+  --fs-800: clamp(3.4rem, 2.2rem + 6vw, 7rem);        /* hero display */
+
+  --lh-tight: 0.98;
+  --lh-snug: 1.1;
+  --lh-body: 1.55;
+
+  --tracking-tight: -0.03em;   /* big display */
+  --tracking-flat: -0.01em;
+  --tracking-wide: 0.14em;     /* eyebrows / nav caps */
+
+  /* --- Spacing --- */
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem;  --sp-6: 2rem;   --sp-8: 3rem;     --sp-10: 4.5rem;
+  --sp-12: 6.5rem; --sp-16: 9rem;
+
+  --maxw: 1200px;
+  --ease: cubic-bezier(.16,.84,.44,1);
+
+  /* Rules */
+  --rule-thin: 1px;
+  --rule-thick: 2px;
+}
+
+/* ---------- Element base ---------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-300);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 0.4em;
+}
+h1 { font-size: var(--fs-700); }
+h2 { font-size: var(--fs-600); }
+h3 { font-size: var(--fs-500); letter-spacing: var(--tracking-flat); }
+p { margin: 0 0 1em; max-width: 66ch; }
+a { color: var(--ink); text-decoration: none; }
+strong { font-weight: 600; }
+
+::selection { background: var(--black); color: var(--white); }
+:focus-visible { outline: var(--rule-thick) solid var(--black); outline-offset: 3px; }
+
+/* Eyebrow / kicker */
+.eyebrow {
+  font-size: var(--fs-100);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}

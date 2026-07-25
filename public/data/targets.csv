@@ -1,0 +1,29 @@
+id,scope,pillar_id,enabler_id,indicator,baseline_value,baseline_year,target_value,target_year,unit,direction,plain_language,source_page
+t1,national,economy,,Economy size (GDP),,,1,2050,USD trillion,increase,"Tanzania aims to grow into a one-trillion-dollar economy by 2050.",9
+t2,national,economy,,GDP per capita,1277,2023,7000,2050,USD,increase,"Average yearly income per person is targeted to rise to US$7,000.",9
+t3,national,economy,,Population,,,118,2050,million people,increase,"Tanzania expects to be home to more than 118 million people by 2050.",9
+t4,national,economy,,Extreme poverty rate,26,2024,0,2050,% of population,decrease,"Extreme poverty is to be eradicated, with focus on women and persons with disabilities.",9
+t5,national,economy,,Income status,,,,2050,category,increase,"Tanzania aims to become an industrialised, knowledge-based, upper-middle-income country.",9
+t6,pillar,economy,,Food production ranking,,,10,2050,global rank (top),increase,"Become a leading food basket in Africa and among the top ten globally.",9
+t7,pillar,people,,Life expectancy,,,75,2050,years,increase,"A Tanzanian is expected to live on average 75 years in good health.",9
+t8,pillar,people,,Children developmentally on track by age five,,,,2050,% of children,increase,"Nearly all children are to be nurtured and developmentally on track by age five.",9
+t9,pillar,people,,Maternal mortality,104,2022,0,2050,deaths per 100000 live births,decrease,"Deaths of mothers, newborns and children are to be eliminated.",9
+t10,pillar,people,,Higher education attainment,,,25,2050,% of youth,increase,"At least 1 in 4 young people to attain higher education with market-relevant skills.",10
+t11,pillar,people,,Formal-sector decent jobs,,,50,2050,% of Tanzanians,increase,"At least half of Tanzanians to hold decent jobs in the formal sector.",10
+t12,pillar,people,energy,Electricity consumption per capita,170,2024,3000,2050,kWh per capita,increase,"Electricity use per person rises from about 170 kWh today to at least 3,000 kWh a year.",50
+t13,pillar,people,,Gender gap reduction,,,85,2050,% reduction,increase,"Lead Africa and rank top ten globally by cutting the gender gap by at least 85%.",10
+t14,pillar,people,,Access to clean water (rural),79.9,2024,100,2050,% of population,increase,"Universal access to safe, clean water; rural access was about 80% in 2024.",4
+t15,pillar,people,,Access to clean water (urban),94,2024,100,2050,% of population,increase,"Universal access to safe, clean water; urban access was 94% in 2024.",4
+t16,pillar,people,,Universal health coverage,,,100,2050,% of population,increase,"Everyone to be covered by health services.",9
+t17,pillar,environment,,Environmental performance & climate adaptation ranking,,,10,2050,Africa rank (top),increase,"Rank among the top ten countries in Africa for environmental performance and climate adaptation.",10
+t18,enabler,people,digital,Digital literacy,,,70,2050,% of citizens,increase,"At least 70% of citizens able to take part in the digital economy.",10
+t19,enabler,,digital,Government services delivered online,,,80,2050,% of services,increase,"Over 80% of government services accessed through secure, user-friendly digital platforms.",10
+t20,national,economy,,GDP growth rate (recent average),6.2,2024,,2050,% per year,increase,"The economy grew about 6.2% a year on average in recent years.",3
+t21,national,economy,,Tax-to-GDP ratio,11.9,2023,,2050,% of GDP,increase,"Government tax revenue was 11.9% of GDP in 2022/23, below the Sub-Saharan Africa average.",50
+t22,national,economy,,Manufactured exports,1400,2024,,2050,USD million,increase,"Manufactured exports grew from US$43m in 2000 to US$1.4bn in 2024.",4
+t23,national,people,,Human Capital Index,0.39,2020,,2050,index 0-1,increase,"Children today reach only 39% of their potential productivity as adults; this must rise.",64
+t24,enabler,,energy,Electricity transmission losses,16,2024,10,2050,% (below),decrease,"Cut electricity lost in transmission from about 16% to below 10%.",50
+t25,enabler,,logistics,Logistics cost share of imports,45,2024,,2050,% of import costs,decrease,"Logistics make up 35-45% of import costs today, among the world's costliest; this must fall.",48
+t26,enabler,,rnd,R&D spending,,,1,2050,% of GDP,increase,"Invest at least 1% of GDP in research and development.",52
+t27,sector,economy,,Manufacturing growth rate,8,2024,,2050,% per year,increase,"Manufacturing is growing about 8% a year and is set to expand as a share of the economy.",58
+t28,national,economy,,Manufacturing share of GDP,8.1,2024,,2050,% of GDP,increase,"Manufacturing contributes 8.1% of GDP today and is set to grow into a cornerstone of the economy.",58

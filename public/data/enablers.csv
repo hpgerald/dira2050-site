@@ -1,0 +1,6 @@
+id,name,summary,pentagon_position,color,icon
+logistics,"Integrated Logistics","Establish Tanzania as a regional trade hub by upgrading railways, ports and road networks for the efficient movement of goods, services and people.",1,#1E8A4C,logistics
+energy,"Energy","Provide reliable, affordable and sustainable energy to power industry, raise productivity and position Tanzania as a regional energy leader.",2,#F6B301,energy
+science-tech,"Science and Technology","Apply disruptive technologies to solve local challenges and raise productivity in agriculture, healthcare and manufacturing.",3,#0091C7,science
+rnd,"Research and Development","Support innovation and evidence-based policy through collaboration between academia, industry and government.",4,#6D4AA7,research
+digital,"Digital Transformation","Harness technology to improve productivity, service delivery and governance while keeping society digitally inclusive.",5,#E4572E,digital
