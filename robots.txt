@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hpgerald.github.io/dira2050-site/sitemap.xml

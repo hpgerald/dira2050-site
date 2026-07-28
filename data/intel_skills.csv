@@ -1,0 +1,16 @@
+skill,category,demand,why_matters,where_in_strategy,basis
+Data science & analytics,Digital,High,"Evidence-driven planning and a national data system depend on people who can turn data into decisions.","Digital Transformation; evidence-driven implementation (MEL)",Inferred
+Artificial intelligence,Digital,High,"AI is named among the disruptive technologies for productivity and service delivery.","Science & Technology; Digital Transformation",Documented
+Cybersecurity,Digital,High,"Expanding e-government and data infrastructure raises the need to secure systems and data sovereignty.","Digital Transformation",Inferred
+GIS & geospatial,Digital,Medium,"Spatial analysis supports land management, agriculture, infrastructure and climate planning.","Environment; evidence-driven implementation",Inferred
+Monitoring & Evaluation,Policy,High,"A digital-first MEL framework and clear KPIs are core to accountable delivery.","Implementation framework (7.5)",Documented
+Public finance & PPP structuring,Policy,High,"Reducing aid dependency and financing via PPPs needs strong public-finance and deal skills.","Implementation; fiscal sustainability",Documented
+Renewable-energy engineering,Engineering,High,"Scaling hydro, solar, wind, geothermal and nuclear requires energy engineers and technicians.","Energy driver",Documented
+Agricultural technology,Agriculture,High,"Modernising crops, livestock, fisheries and forestry needs agri-tech, aquaculture and cold-chain skills.","Agriculture sector",Inferred
+Manufacturing & industrial engineering,Engineering,High,"Value addition and a competitive manufacturing hub depend on industrial and process engineers.","Manufacturing sector",Documented
+Logistics & supply-chain,Operations,High,"Cutting logistics costs (35-45% of imports) and running multimodal transport needs supply-chain expertise.","Integrated Logistics driver",Documented
+Climate adaptation,Environment,Medium,"Climate resilience and environmental integrity are a full pillar of the Vision.","Environment pillar",Documented
+Research & IP commercialisation,Research,Medium,"Turning research into products requires innovation management and IP skills.","R&D driver",Documented
+Healthcare specialties,Health,Medium,"Universal health coverage and ending maternal/child mortality require more health professionals.","People pillar; health",Documented
+Financial technology,Digital,Medium,"Expanding financial inclusion builds on mobile money and digital banking.","Financial services; Digital Transformation",Documented
+Software & product development,Digital,High,"Digital services, e-government and startups all rest on software talent.","Digital Transformation",Inferred
