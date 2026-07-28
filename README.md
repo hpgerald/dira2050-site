@@ -14,6 +14,11 @@ A static React + Vite site that makes the Tanzania Development Vision 2050 under
 
 **The site is complete — all 8 phases done.**
 
+### Post-launch additions
+- **SEO.** Switched to real crawlable URLs (`BrowserRouter` + GitHub Pages `404.html` redirect), `base:'/dira2050-site/'`; added canonical, rich meta, Open Graph + Twitter cards, JSON-LD (WebSite/creator), per-route titles + descriptions, `robots.txt`, `sitemap.xml`, and a generated `og.png` social image.
+- **Opportunities & Strategic Intelligence layer** (deep dive at the bottom of `/what-it-means`). Analytical "second heart": audience-specific intelligence (12 roles), sector-attention outlook, opportunity map, skills-in-demand, and a strategic briefing (priorities/dependencies/gaps/bottlenecks/leverage/risks). Driven by five `intel_*.csv` datasets; every item tagged **Documented** vs **Inferred**.
+- **Founder section** on `/about` — the Information Visualization Institute vision, Gerald Tesha bio, and contact details.
+
 ## Design (locked)
 Editorial / **Pentagram-agency** aesthetic: monochrome — black, white and grey ONLY, no accent colours. Meaning comes from typography, scale and layout. The five Drivers are the navigation hub, presented as a large numbered index that inverts to black on hover/focus (not a star or pentagon). React + Vite static · English · general-public audience. Type: Inter (neo-grotesque), large and tightly tracked.
 

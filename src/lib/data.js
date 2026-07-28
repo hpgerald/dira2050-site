@@ -18,7 +18,15 @@ const FILES = {
   milestones: 'milestones.csv',
   glossary: 'glossary.csv',
   sources: 'sources.csv',
+  intelAudiences: 'intel_audiences.csv',
+  intelOpportunities: 'intel_opportunities.csv',
+  intelSkills: 'intel_skills.csv',
+  intelSectors: 'intel_sectors_outlook.csv',
+  intelStrategic: 'intel_strategic.csv',
 }
+
+// Split a pipe-delimited cell into a clean array.
+export const pipes = (v) => (v ? String(v).split('|').map((s) => s.trim()).filter(Boolean) : [])
 
 function parseCsv(text) {
   const { data, errors } = Papa.parse(text.trim(), {

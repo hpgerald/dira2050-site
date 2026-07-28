@@ -179,6 +179,78 @@
 .fy__body p { font-size: var(--fs-400); line-height: 1.5; max-width: 62ch; }
 @media (max-width: 560px) { .fy { grid-template-columns: 1fr; gap: var(--sp-2); } }
 
+/* ---------- Contact (About / founder) ---------- */
+.contact { display: grid; gap: 0; margin: var(--sp-4) 0 0; border-top: var(--rule-thin) solid var(--black); max-width: 40rem; }
+.contact > div { display: grid; grid-template-columns: 7rem 1fr; gap: var(--sp-4); padding: var(--sp-3) 0; border-bottom: var(--rule-thin) solid var(--line); }
+.contact dt { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--ink-faint); font-weight: 600; margin: 0; }
+.contact dd { margin: 0; font-weight: 500; }
+.contact a { border-bottom: 2px solid transparent; }
+.contact a:hover { border-bottom-color: var(--black); }
+
+/* ---------- Basis tag (Documented / Inferred) ---------- */
+.basis { display: inline-block; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: .15em .5em; vertical-align: middle; white-space: nowrap; }
+.basis--doc { background: var(--black); color: var(--white); }
+.basis--inferred { background: transparent; color: var(--ink); border: 1px dashed var(--g-400); }
+
+/* ---------- Strategic Intelligence layer ---------- */
+.si { margin-top: var(--sp-10); }
+.si h2 { font-size: var(--fs-600); margin-top: var(--sp-2); }
+.si-legend { font-size: var(--fs-100); color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: .4em 1em; align-items: center; }
+.si-legend .basis { margin-right: .3em; }
+.si-block { margin-top: var(--sp-8); }
+
+/* audience selector */
+.si-audbar { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-5); }
+.si-aud { font-size: var(--fs-100); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; padding: .5em .9em; border: var(--rule-thin) solid var(--black); background: var(--white); cursor: pointer; transition: background-color .15s var(--ease), color .15s var(--ease); }
+.si-aud:hover { background: var(--g-100); }
+.si-aud.is-active { background: var(--black); color: var(--white); }
+.si-panel { border-top: var(--rule-thick) solid var(--black); padding-top: var(--sp-4); }
+.si-why { font-size: var(--fs-400); font-weight: 500; max-width: 62ch; }
+.si-grid { display: grid; gap: var(--sp-5); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: var(--sp-4); }
+.si-list__label { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--ink-faint); font-weight: 600; margin: 0 0 var(--sp-2); padding-bottom: var(--sp-2); border-bottom: var(--rule-thin) solid var(--line); }
+.si-list ul { margin: 0; padding: 0; list-style: none; }
+.si-list li { font-size: var(--fs-200); padding: .35em 0; border-bottom: var(--rule-thin) solid var(--g-100); }
+.si-tagline { font-size: var(--fs-100); color: var(--ink-faint); margin-top: var(--sp-4); }
+
+/* sector outlook */
+.si-sectors { list-style: none; margin: var(--sp-4) 0 0; padding: 0; border-top: var(--rule-thin) solid var(--black); }
+.si-sector { padding: var(--sp-4) 0; border-bottom: var(--rule-thin) solid var(--line); }
+.si-sector__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-3); }
+.si-sector__name { font-weight: 700; font-size: var(--fs-400); }
+.si-sector__signal { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); }
+.si-meter { display: inline-flex; gap: 4px; margin: var(--sp-2) 0; }
+.si-meter__seg { width: 34px; height: 10px; background: var(--g-200); }
+.si-meter__seg.on { background: var(--black); }
+.si-sector__why { font-size: var(--fs-200); color: var(--ink-soft); margin: 0; max-width: 68ch; }
+
+/* opportunity map */
+.si-opps { display: grid; gap: 0; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); border-top: var(--rule-thin) solid var(--black); border-left: var(--rule-thin) solid var(--line); margin-top: var(--sp-4); }
+.si-opp { padding: var(--sp-4); border-bottom: var(--rule-thin) solid var(--line); border-right: var(--rule-thin) solid var(--line); }
+.si-opp__top { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-2); }
+.si-opp__type { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--ink-faint); }
+.si-opp__title { font-size: var(--fs-400); margin: var(--sp-2) 0; letter-spacing: var(--tracking-flat); }
+.si-opp__desc { font-size: var(--fs-200); color: var(--ink-soft); margin: 0 0 var(--sp-3); }
+.si-opp__meta { display: flex; flex-direction: column; gap: 2px; font-size: var(--fs-100); color: var(--ink-faint); margin: 0; }
+.si-opp__link { color: var(--ink-faint); }
+
+/* skills */
+.si-skills { list-style: none; margin: var(--sp-4) 0 0; padding: 0; border-top: var(--rule-thin) solid var(--black); }
+.si-skill { padding: var(--sp-4) 0; border-bottom: var(--rule-thin) solid var(--line); }
+.si-skill__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-3); }
+.si-skill__name { font-weight: 700; font-size: var(--fs-400); }
+.si-demand { font-size: var(--fs-100); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: .15em .5em; white-space: nowrap; }
+.si-demand--high { background: var(--black); color: var(--white); }
+.si-demand--medium { border: var(--rule-thin) solid var(--black); }
+.si-skill__why { font-size: var(--fs-200); color: var(--ink-soft); margin: var(--sp-2) 0 var(--sp-1); max-width: 68ch; }
+.si-skill__where { font-size: var(--fs-100); color: var(--ink-faint); margin: 0; }
+
+/* strategic briefing */
+.si-strat { margin-top: var(--sp-5); }
+.si-strat__cat { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--ink); border-bottom: var(--rule-thick) solid var(--black); padding-bottom: var(--sp-2); margin: 0 0 var(--sp-2); }
+.si-strat__list { list-style: none; margin: 0; padding: 0; }
+.si-strat__item { font-size: var(--fs-300); padding: var(--sp-3) 0; border-bottom: var(--rule-thin) solid var(--line); max-width: 74ch; }
+.si-strat__item .basis { margin-left: .3em; }
+
 /* ---------- Glossary term ---------- */
 .gterm { position: relative; display: inline-block; }
 .gterm__btn { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 0; padding: 0; cursor: help; border-bottom: 2px dotted var(--g-400); }

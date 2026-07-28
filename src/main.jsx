@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
-import { HashRouter, useLocation } from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import App from './App.jsx'
 import './design/tokens.css'
 import './design/components.css'
 
-// Scroll to top on every route change.
+// Real, crawlable URLs (good for SEO). GitHub Pages has no server rewrites, so a
+// 404.html redirect (see public/404.html) restores deep links on hard refresh.
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
   return null
 }
 
-// HashRouter keeps deep links working on any static host (GitHub Pages etc.)
-// without server-side rewrite rules.
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>,
 )

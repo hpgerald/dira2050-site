@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../usePageTitle.js'
 
 export default function About() {
-  usePageTitle('About')
+  usePageTitle('About', 'About Dira 2050 Explained — an independent, plain-language guide to the Tanzania Development Vision 2050, and the initiative behind it.')
   return (
     <div className="container section stack">
       <div className="cols">
@@ -44,6 +44,35 @@ export default function About() {
         <div>
           <p className="measure">This is an independent explainer to aid public understanding. It is not an official
           government publication.</p>
+        </div>
+      </section>
+
+      <hr className="rule rule--strong" />
+
+      <section className="cols">
+        <div className="cols__label">About the founder</div>
+        <div className="stack">
+          <p className="measure">This project is part of a broader effort to build an independent <strong>Information
+          Visualization Institute</strong> — dedicated to making complex public information easier to understand
+          through clear, accessible, evidence-based visual communication. The long-term vision is to turn government
+          strategies, policies, research, statistics, budgets and development reports into interactive experiences that
+          help citizens, researchers, policymakers, educators and development partners understand the issues shaping
+          society.</p>
+
+          <p className="measure">The initiative was founded by <strong>Gerald Tesha</strong>, an Information Systems and
+          Network Engineer (St. Joseph College of Engineering and Technology) with a specialisation in Information
+          Visualization from the NYU Tandon School of Engineering. Based in Dodoma, Tanzania, Gerald has more than nine
+          years' experience in data, monitoring and evaluation, information management and visualization across health
+          and international-development programs in Sub-Saharan Africa.</p>
+
+          <p className="measure">Collaborators, researchers, designers, software engineers, institutions and
+          organisations interested in advancing this work are warmly welcome to get in touch.</p>
+
+          <dl className="contact">
+            <div><dt>Email</dt><dd><a href="mailto:hpgerald@gmail.com">hpgerald@gmail.com</a></dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+255763453400">+255 763 453 400</a></dd></div>
+            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/gtesha/" target="_blank" rel="noopener noreferrer">linkedin.com/in/gtesha</a></dd></div>
+          </dl>
         </div>
       </section>
     </div>

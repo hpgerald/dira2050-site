@@ -12,7 +12,7 @@ function headline(data) {
 }
 
 export default function Home() {
-  usePageTitle()
+  usePageTitle(null, 'A plain-language, data-driven guide to the Tanzania Development Vision 2050 — its goals, targets, pillars, drivers, the opportunities it creates, and what it means for you.')
   const { data, loading, error } = useData()
 
   return (

@@ -9,7 +9,7 @@ const GOALS = [
 ]
 
 export default function Vision() {
-  usePageTitle('The Vision')
+  usePageTitle('The Vision', 'The four national goals of Tanzania Development Vision 2050 and how its foundation, pillars, drivers and sectors fit together.')
   return (
     <div className="container section stack">
       <div className="cols">

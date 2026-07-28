@@ -1,9 +1,10 @@
 import { useData } from '../useData.js'
 import GlossaryTerm from '../components/GlossaryTerm.jsx'
+import StrategicIntelligence from '../components/StrategicIntelligence.jsx'
 import { usePageTitle } from '../usePageTitle.js'
 
 export default function WhatItMeans() {
-  usePageTitle('What it means for you')
+  usePageTitle('What it means for you', 'What Tanzania Development Vision 2050 means for your everyday life — and the opportunities, skills and strategic intelligence it holds for citizens, students, businesses, investors and more.')
   const { data, loading, error } = useData()
   if (loading) return <p className="container section">Loading…</p>
   if (error) return <p className="container section" role="alert">Could not load data.</p>
@@ -94,6 +95,8 @@ export default function WhatItMeans() {
           {' '}without leaving anyone behind.</p>
         </div>
       </section>
+
+      <StrategicIntelligence data={data} />
     </div>
   )
 }

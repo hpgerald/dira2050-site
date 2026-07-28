@@ -13,7 +13,7 @@ const FILTERS = [
 ]
 
 export default function TargetsDashboard() {
-  usePageTitle('Targets')
+  usePageTitle('Targets', 'Every Vision 2050 target with a now-versus-2050 comparison — income, poverty, electricity, health, education, digital and more, each traceable to the source.')
   const { data, loading, error } = useData()
   const [active, setActive] = useState('all')
 
