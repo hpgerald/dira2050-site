@@ -1,37 +1,32 @@
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../usePageTitle.js'
-
-const GOALS = [
-  ['01', 'A strong economy', 'A diversified, resilient, inclusive and competitive upper-middle-income economy — a one-trillion-dollar economy with US$7,000 income per person.'],
-  ['02', 'A good life for all', 'High quality of life and well-being for everyone: long, healthy lives, quality education and skills, clean water, decent housing and social protection.'],
-  ['03', 'A cared-for environment', 'A nation that conserves and sustainably uses its natural resources, maintains environmental integrity, and is resilient to climate change.'],
-  ['04', 'A digital society', 'A digitally empowered society that embraces innovation and drives the country’s productivity and competitiveness.'],
-]
+import { useLang } from '../i18n.jsx'
 
 export default function Vision() {
-  usePageTitle('The Vision', 'The four national goals of Tanzania Development Vision 2050 and how its foundation, pillars, drivers and sectors fit together.')
+  const { t } = useLang()
+  usePageTitle(t('vision.label'), t('vision.lead'))
+  const goals = t('vision.goals')
+
   return (
     <div className="container section stack">
       <div className="cols">
-        <div className="cols__label">The Vision</div>
+        <div className="cols__label">{t('vision.label')}</div>
         <div>
-          <h1>The Tanzania we want.</h1>
-          <p className="lede measure">By 2050, Tanzania aims to be an industrialised, knowledge-based, upper-middle-income
-          country — with a one-trillion-dollar economy, an average income of US$7,000 per person, and a high quality of
-          life for all its people.</p>
+          <h1>{t('vision.title')}</h1>
+          <p className="lede measure">{t('vision.lead')}</p>
         </div>
       </div>
 
       <hr className="rule rule--strong" />
 
       <section className="cols">
-        <div className="cols__label">Four goals</div>
+        <div className="cols__label">{t('vision.goalsLabel')}</div>
         <div>
-          <p className="measure">Dira 2050 sets out four national goals for the next 25 years.</p>
+          <p className="measure">{t('vision.goalsIntro')}</p>
           <ol className="goals">
-            {GOALS.map(([num, title, desc]) => (
-              <li key={num} className="goal">
-                <span className="goal__num">{num}</span>
+            {goals.map(([title, desc], i) => (
+              <li key={i} className="goal">
+                <span className="goal__num">{String(i + 1).padStart(2, '0')}</span>
                 <div>
                   <h3 className="goal__title">{title}</h3>
                   <p className="goal__desc">{desc}</p>
@@ -45,16 +40,12 @@ export default function Vision() {
       <hr className="rule" />
 
       <section className="cols">
-        <div className="cols__label">How it works</div>
+        <div className="cols__label">{t('vision.howLabel')}</div>
         <div className="stack">
-          <p className="measure">The Vision rests on a <strong>foundation</strong> of good governance, peace and
-          stability. On that base stand <strong>three pillars</strong> — a strong economy, capable people, and a healthy
-          environment. Powering them are <strong>five drivers</strong>: logistics, energy, science &amp; technology,
-          research &amp; development, and digital transformation. And it is delivered through prioritised
-          <strong> transformative sectors</strong> like agriculture, tourism, manufacturing and mining.</p>
+          <p className="measure">{t('vision.howBody')}</p>
           <p>
-            <Link className="btn" to="/pillars">Explore the framework</Link>{' '}
-            <Link className="btn btn--ghost" to="/targets">See the targets</Link>
+            <Link className="btn" to="/pillars">{t('vision.btnFramework')}</Link>{' '}
+            <Link className="btn btn--ghost" to="/targets">{t('vision.btnTargets')}</Link>
           </p>
         </div>
       </section>

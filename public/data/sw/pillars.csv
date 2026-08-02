@@ -1,0 +1,4 @@
+id,name,short_name,summary,color,icon,order
+economy,"Uchumi Imara, Jumuishi na Shindani",Uchumi,"Uchumi wa kipato cha kati ngazi ya juu ulio mseto, himilivu na shindani, unaotokana na utulivu wa uchumi jumla, uendelevu wa kifedha, sekta binafsi imara na uzalishaji wa viwanda unaolenga mauzo ya nje.",#1EB53A,economy,1
+people,"Uwezo wa Watu na Maendeleo ya Jamii",Watu,"Jamii yenye afya, elimu, ujuzi, mshikamano na hifadhi ya jamii, ikiwa na msisitizo mkubwa kwenye STEM, huduma za afya kwa wote, na ujumuishaji wa makundi maalum.",#FCD116,people,2
+environment,"Uhifadhi wa Mazingira na Ustahimilivu wa Mabadiliko ya Tabianchi",Mazingira,"Usimamizi endelevu wa rasilimali za asili ikijumuisha bayoanuai, ardhioevu na maji, udhibiti wa uchafuzi na usimamizi wa ardhi, na ustahimilivu wa mabadiliko ya tabianchi.",#00A3DD,environment,3

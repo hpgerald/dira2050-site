@@ -1,0 +1,29 @@
+id,scope,pillar_id,enabler_id,indicator,baseline_value,baseline_year,target_value,target_year,unit,direction,plain_language,source_page
+t1,national,economy,,Ukubwa wa uchumi (Pato la Taifa),,,1,2050,dola trilioni,increase,"Tanzania inalenga kukua na kuwa uchumi wa dola trilioni moja ifikapo 2050.",8
+t2,national,economy,,Pato la mtu mmoja,1277,2023,7000,2050,dola,increase,"Wastani wa kipato cha mwaka kwa mtu unalengwa kupanda hadi dola 7,000.",8
+t3,national,economy,,Idadi ya watu,,,118,2050,watu milioni,increase,"Tanzania inatarajia kuwa na zaidi ya watu milioni 118 ifikapo 2050.",8
+t4,national,economy,,Kiwango cha umaskini uliokithiri,26,2024,0,2050,% ya watu,decrease,"Umaskini uliokithiri utatokomezwa, kwa kuzingatia wanawake na watu wenye ulemavu.",8
+t5,national,economy,,Hadhi ya kipato,,,,2050,aina,increase,"Tanzania inalenga kuwa nchi ya viwanda, ya uchumi wa maarifa, yenye kipato cha kati ngazi ya juu.",8
+t6,pillar,economy,,Nafasi ya uzalishaji wa chakula,,,10,2050,nafasi duniani (bora),increase,"Kuwa mzalishaji mkuu wa chakula barani Afrika na miongoni mwa nchi kumi bora duniani.",8
+t7,pillar,people,,Umri wa kuishi,,,75,2050,miaka,increase,"Mtanzania anatarajiwa kuishi wastani wa miaka 75 akiwa na afya njema.",8
+t8,pillar,people,,Watoto wanaofikia hatua stahiki ifikapo miaka mitano,,,90,2050,% ya watoto,increase,"Angalau asilimia 90 ya watoto wafikie hatua stahiki za ukuaji ifikapo umri wa miaka mitano.",8
+t9,pillar,people,,Vifo vya uzazi,104,2022,0,2050,vifo kwa vizazi hai 100000,decrease,"Vifo vya wajawazito, watoto wachanga na watoto watatokomezwa.",8
+t10,pillar,people,,Ufikiaji wa elimu ya juu,,,25,2050,% ya vijana,increase,"Angalau mtu 1 kati ya 4 afike elimu ya juu akiwa na ujuzi unaohitajika sokoni.",8
+t11,pillar,people,,Ajira zenye staha sekta rasmi,,,50,2050,% ya Watanzania,increase,"Angalau nusu ya Watanzania wawe na ajira zenye staha katika sekta rasmi.",8
+t12,pillar,people,energy,Matumizi ya umeme kwa mtu,170,2024,3000,2050,kWh kwa mtu,increase,"Matumizi ya umeme kwa mtu yanapanda kutoka takriban 170 kWh leo hadi angalau 3,000 kWh kwa mwaka.",45
+t13,pillar,people,,Kupunguza pengo la kijinsia,,,85,2050,% kupungua,increase,"Kuongoza Afrika na kuwa miongoni mwa kumi bora duniani kwa kupunguza pengo la kijinsia kwa angalau 85%.",8
+t14,pillar,people,,Upatikanaji wa maji safi (vijijini),79.9,2024,100,2050,% ya watu,increase,"Upatikanaji wa maji safi na salama kwa wote; vijijini ulikuwa takriban 80% mwaka 2024.",4
+t15,pillar,people,,Upatikanaji wa maji safi (mijini),94,2024,100,2050,% ya watu,increase,"Upatikanaji wa maji safi na salama kwa wote; mijini ulikuwa 94% mwaka 2024.",4
+t16,pillar,people,,Huduma za afya kwa wote,,,100,2050,% ya watu,increase,"Kila mtu apate huduma za afya.",8
+t17,pillar,environment,,Nafasi ya uhifadhi wa mazingira na kustahimili tabianchi,,,10,2050,nafasi Afrika (bora),increase,"Kuwa miongoni mwa nchi kumi bora barani Afrika kwa uhifadhi wa mazingira na kustahimili mabadiliko ya tabianchi.",8
+t18,enabler,people,digital,Umahiri wa kidijitali,,,70,2050,% ya wananchi,increase,"Angalau 70% ya wananchi waweze kushiriki katika uchumi wa kidijitali.",8
+t19,enabler,,digital,Huduma za serikali mtandaoni,,,80,2050,% ya huduma,increase,"Zaidi ya 80% ya huduma za serikali zipatikane kupitia mifumo salama ya kidijitali.",8
+t20,national,economy,,Kasi ya ukuaji wa uchumi (wastani wa hivi karibuni),6.2,2024,,2050,% kwa mwaka,increase,"Uchumi ulikua kwa wastani wa 6.2% kwa mwaka katika miaka ya hivi karibuni.",3
+t21,national,economy,,Uwiano wa kodi kwa pato la taifa,11.9,2023,,2050,% ya pato la taifa,increase,"Mapato ya kodi yalikuwa 11.9% ya pato la taifa mwaka 2022/23, chini ya wastani wa Afrika Kusini mwa Jangwa.",45
+t22,national,economy,,Mauzo ya bidhaa za viwandani nje,1400,2024,,2050,dola milioni,increase,"Mauzo ya bidhaa za viwandani nje yalikua kutoka dola milioni 43 (2000) hadi dola bilioni 1.4 (2024).",4
+t23,national,people,,Kielelezo cha Mtaji Watu,0.39,2020,,2050,kielelezo 0-1,increase,"Watoto wa leo hufikia tu 39% ya tija yao wanapokuwa watu wazima; hili linapaswa kupanda.",58
+t24,enabler,,energy,Upotevu wa umeme kwenye usafirishaji,16,2024,10,2050,% (chini ya),decrease,"Kupunguza umeme unaopotea kwenye usafirishaji kutoka takriban 16% hadi chini ya 10%.",45
+t25,enabler,,logistics,Sehemu ya gharama za usafirishaji kwenye uagizaji,45,2024,,2050,% ya gharama za uagizaji,decrease,"Usafirishaji unachukua 35-45% ya gharama za uagizaji leo, miongoni mwa ghali zaidi duniani; hili lazima lishuke.",44
+t26,enabler,,rnd,Matumizi ya utafiti na maendeleo,,,1,2050,% ya pato la taifa,increase,"Kuwekeza angalau 1% ya pato la taifa katika utafiti na maendeleo.",48
+t27,sector,economy,,Kasi ya ukuaji wa viwanda,8,2024,,2050,% kwa mwaka,increase,"Sekta ya viwanda inakua kwa takriban 8% kwa mwaka na inatarajiwa kupanua mchango wake kwenye uchumi.",52
+t28,national,economy,,Mchango wa viwanda kwenye pato la taifa,8.1,2024,,2050,% ya pato la taifa,increase,"Viwanda vinachangia 8.1% ya pato la taifa leo na vinatarajiwa kukua kuwa nguzo ya uchumi.",52

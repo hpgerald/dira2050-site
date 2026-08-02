@@ -1,4 +1,4 @@
-// Brand mark — a simple solid square. In a monochrome editorial system the
+// Brand mark - a simple solid square. In a monochrome editorial system the
 // wordmark carries the identity; the mark is just a typographic bullet.
 export default function StarMark({ size = 12, className = '', color = 'currentColor' }) {
   return (

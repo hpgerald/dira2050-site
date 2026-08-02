@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 // Sets per-route <title> and meta description (helps SEO and link previews).
 export function usePageTitle(title, description) {
   useEffect(() => {
-    document.title = title ? `${title} — Dira 2050 Explained` : 'Dira 2050 Explained — Tanzania Development Vision 2050, made clear'
+    document.title = title ? `${title} · Dira 2050 Explained` : 'Dira 2050 Explained · Tanzania Development Vision 2050, made clear'
     if (description) {
       setMeta('name', 'description', description)
       setMeta('property', 'og:description', description)

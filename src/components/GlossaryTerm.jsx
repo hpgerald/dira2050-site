@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 /*
-  GlossaryTerm — an inline term that reveals a plain-language definition on
+  GlossaryTerm - an inline term that reveals a plain-language definition on
   hover, keyboard focus, or tap. Implemented as a real <button> so it is
   keyboard-operable and screen-reader friendly; the tooltip is also shown via
   :hover / :focus-within in CSS for pointer and keyboard users.
@@ -18,7 +18,7 @@ export default function GlossaryTerm({ term, definition }) {
       >
         {term}
       </button>
-      <span className="gterm__tip" role="tooltip">{definition || '—'}</span>
+      <span className="gterm__tip" role="tooltip">{definition || '–'}</span>
     </span>
   )
 }

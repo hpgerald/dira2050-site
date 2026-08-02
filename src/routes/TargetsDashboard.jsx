@@ -3,17 +3,18 @@ import { useData } from '../useData.js'
 import TargetCard from '../components/TargetCard.jsx'
 import { isNumber } from '../lib/format.js'
 import { usePageTitle } from '../usePageTitle.js'
+import { useLang } from '../i18n.jsx'
 
 const FILTERS = [
-  { key: 'all', label: 'All', match: () => true },
-  { key: 'economy', label: 'Economy', match: (t) => t.pillar_id === 'economy' },
-  { key: 'people', label: 'People', match: (t) => t.pillar_id === 'people' },
-  { key: 'environment', label: 'Environment', match: (t) => t.pillar_id === 'environment' },
-  { key: 'drivers', label: 'Drivers', match: (t) => !!t.enabler_id },
+  { key: 'all', match: () => true },
+  { key: 'economy', match: (t) => t.pillar_id === 'economy' },
+  { key: 'people', match: (t) => t.pillar_id === 'people' },
+  { key: 'environment', match: (t) => t.pillar_id === 'environment' },
+  { key: 'drivers', match: (t) => !!t.enabler_id },
 ]
 
 export default function TargetsDashboard() {
-  usePageTitle('Targets', 'Every Vision 2050 target with a now-versus-2050 comparison — income, poverty, electricity, health, education, digital and more, each traceable to the source.')
+  const { t } = useLang()
   const { data, loading, error } = useData()
   const [active, setActive] = useState('all')
 
@@ -23,33 +24,30 @@ export default function TargetsDashboard() {
     return data.targets.filter(f.match)
   }, [data, active])
 
-  if (loading) return <p className="container section">Loading…</p>
-  if (error) return <p className="container section" role="alert">Could not load data.</p>
+  usePageTitle(t('targets.label'))
+  if (loading) return <p className="container section">{t('common.loading')}</p>
+  if (error) return <p className="container section" role="alert">{t('common.error')}</p>
 
-  const measurable = data.targets.filter((t) => isNumber(t.target_value)).length
+  const measurable = data.targets.filter((x) => isNumber(x.target_value)).length
 
   return (
     <div className="container section stack">
       <div className="cols">
-        <div className="cols__label">Targets</div>
+        <div className="cols__label">{t('targets.label')}</div>
         <div>
-          <h1>{data.targets.length} targets. One deadline: 2050.</h1>
-          <p className="measure">Where Tanzania is now, and where Dira 2050 aims to be. {measurable} of these carry a
-          measurable 2050 figure — the bars show how big each leap really is. Every figure links back to a page in the
-          source document.</p>
+          <h1>{t('targets.title')(data.targets.length)}</h1>
+          <p className="measure">{t('targets.intro')(measurable)}</p>
         </div>
       </div>
 
-      {/* Filter bar */}
-      <div className="filterbar" role="group" aria-label="Filter targets">
+      <div className="filterbar" role="group" aria-label={t('targets.label')}>
         {FILTERS.map((f) => {
           const count = data.targets.filter(f.match).length
           return (
             <button key={f.key} type="button"
               className={`filterbar__btn ${active === f.key ? 'is-active' : ''}`}
-              aria-pressed={active === f.key}
-              onClick={() => setActive(f.key)}>
-              {f.label} <span className="filterbar__n">{count}</span>
+              aria-pressed={active === f.key} onClick={() => setActive(f.key)}>
+              {t(`targets.filters.${f.key}`)} <span className="filterbar__n">{count}</span>
             </button>
           )
         })}
@@ -57,10 +55,10 @@ export default function TargetsDashboard() {
 
       <hr className="rule rule--strong" />
 
-      <p className="resultcount" aria-live="polite">{filtered.length} target{filtered.length === 1 ? '' : 's'}</p>
+      <p className="resultcount" aria-live="polite">{t('targets.count')(filtered.length)}</p>
 
       <div className="tgrid">
-        {filtered.map((t) => <TargetCard key={t.id} t={t} />)}
+        {filtered.map((tg) => <TargetCard key={tg.id} t={tg} />)}
       </div>
     </div>
   )

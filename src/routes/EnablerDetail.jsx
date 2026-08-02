@@ -4,14 +4,16 @@ import { getEnablers, getEnabler, targetsForEnabler, aspirationsForEnabler } fro
 import TargetList from '../components/TargetList.jsx'
 import NotFound from './NotFound.jsx'
 import { usePageTitle } from '../usePageTitle.js'
+import { useLang } from '../i18n.jsx'
 
 export default function EnablerDetail() {
   const { id } = useParams()
+  const { t } = useLang()
   const { data, loading, error } = useData()
   const enabler = data ? getEnabler(data, id) : null
-  usePageTitle(enabler ? enabler.name : 'Driver')
-  if (loading) return <p className="container section">Loading…</p>
-  if (error) return <p className="container section" role="alert">Could not load data.</p>
+  usePageTitle(enabler ? enabler.name : t('driver.word'))
+  if (loading) return <p className="container section">{t('common.loading')}</p>
+  if (error) return <p className="container section" role="alert">{t('common.error')}</p>
   if (!enabler) return <NotFound />
 
   const all = getEnablers(data)
@@ -23,9 +25,9 @@ export default function EnablerDetail() {
 
   return (
     <article className="container section stack">
-      <p className="eyebrow"><Link to="/pillars">Drivers</Link> · Driver {idx + 1} of {all.length}</p>
+      <p className="eyebrow"><Link to="/pillars">{t('driver.crumb')}</Link> · {t('driver.word')} {idx + 1} {t('driver.of')} {all.length}</p>
       <div className="cols">
-        <div className="cols__label">Driver {String(idx + 1).padStart(2, '0')}</div>
+        <div className="cols__label">{t('driver.word')} {String(idx + 1).padStart(2, '0')}</div>
         <div>
           <h1>{enabler.name}</h1>
           <p className="lede measure">{enabler.summary}</p>
@@ -37,7 +39,7 @@ export default function EnablerDetail() {
       {targets.length > 0 && (
         <>
           <section className="cols">
-            <div className="cols__label">Targets · by 2050</div>
+            <div className="cols__label">{t('driver.targets')}</div>
             <div><TargetList targets={targets} /></div>
           </section>
           <hr className="rule" />
@@ -45,9 +47,9 @@ export default function EnablerDetail() {
       )}
 
       <section className="cols">
-        <div className="cols__label">Aspirations</div>
+        <div className="cols__label">{t('driver.aspirations')}</div>
         <div>
-          <p className="measure">What Tanzania wants this driver to look like by 2050.</p>
+          <p className="measure">{t('driver.aspirationsIntro')}</p>
           <ol className="asp">
             {aspirations.map((a) => (
               <li key={a.letter} className="asp__item"><span className="asp__mark">{a.letter}</span><span>{a.text}</span></li>

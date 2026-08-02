@@ -17,7 +17,7 @@ export default function Debug() {
     ['Drivers (enablers)', data.enablers.length],
     ['Foundation attributes', data.foundation.length],
     ['Targets', data.targets.length],
-    ['— of which national', nationalTargets(data).length],
+    ['of which national', nationalTargets(data).length],
     ['Sectors', data.sectors.length],
     ['Sector KPIs', data.sectorKpis.length],
     ['Sector selection criteria', data.sectorCriteria.length],
@@ -46,7 +46,7 @@ export default function Debug() {
       <h2>Pillars</h2>
       <ul>
         {getPillars(data).map((p) => (
-          <li key={p.id}><strong>{p.short_name}</strong> — {p.name}</li>
+          <li key={p.id}><strong>{p.short_name}</strong>: {p.name}</li>
         ))}
       </ul>
 

@@ -1,22 +1,23 @@
 import { useData } from '../useData.js'
 import { usePageTitle } from '../usePageTitle.js'
+import { useLang } from '../i18n.jsx'
 
 export default function Timeline() {
-  usePageTitle('Timeline')
+  const { t } = useLang()
+  usePageTitle(t('timeline.label'), t('timeline.intro'))
   const { data, loading, error } = useData()
-  if (loading) return <p className="container section">Loading…</p>
-  if (error) return <p className="container section" role="alert">Could not load data.</p>
+  if (loading) return <p className="container section">{t('common.loading')}</p>
+  if (error) return <p className="container section" role="alert">{t('common.error')}</p>
 
   const items = [...data.milestones].sort((a, b) => a.year - b.year)
 
   return (
     <div className="container section stack">
       <div className="cols">
-        <div className="cols__label">Timeline</div>
+        <div className="cols__label">{t('timeline.label')}</div>
         <div>
-          <h1>From 2000 to 2050.</h1>
-          <p className="measure">Dira 2050 builds on decades of progress and runs on a 25-year plan. Here are the
-          markers that matter — where Tanzania started, where it is, and where it's headed.</p>
+          <h1>{t('timeline.title')}</h1>
+          <p className="measure">{t('timeline.intro')}</p>
         </div>
       </div>
 
@@ -30,7 +31,7 @@ export default function Timeline() {
               <span className="tline__phase">{m.phase}</span>
               <h3 className="tline__title">{m.title}</h3>
               <p className="tline__desc">{m.description}</p>
-              {m.source_page && <p className="tline__src">Vision 2050, p.{m.source_page}</p>}
+              {m.source_page && <p className="tline__src">{t('common.sourceCite')}{m.source_page}</p>}
             </div>
           </li>
         ))}

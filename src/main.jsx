@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import App from './App.jsx'
+import { LanguageProvider } from './i18n.jsx'
 import './design/tokens.css'
 import './design/components.css'
 
@@ -18,8 +19,10 @@ function ScrollToTop() {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename={basename}>
-      <ScrollToTop />
-      <App />
+      <LanguageProvider>
+        <ScrollToTop />
+        <App />
+      </LanguageProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

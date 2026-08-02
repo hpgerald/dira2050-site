@@ -1,5 +1,5 @@
 /* ============================================================
-   Component styles — editorial / Pentagram-inspired, monochrome
+   Component styles - editorial / Pentagram-inspired, monochrome
    ============================================================ */
 
 /* ---------- Skip link ---------- */
@@ -27,10 +27,15 @@
 .nav__inner { max-width: var(--maxw); margin: 0 auto; padding: var(--sp-3) var(--sp-5); display: flex; align-items: center; justify-content: space-between; }
 .nav__brand { font-weight: 700; font-size: var(--fs-400); letter-spacing: var(--tracking-flat); color: var(--black); }
 .nav__brand-sub { font-weight: 400; color: var(--ink-faint); }
-.nav__links { display: flex; gap: var(--sp-5); }
+.nav__links { display: flex; gap: var(--sp-5); margin-left: auto; margin-right: var(--sp-5); }
 .nav__links a { font-size: var(--fs-100); font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--ink-soft); padding: .3em 0; border-bottom: var(--rule-thick) solid transparent; }
 .nav__links a:hover { color: var(--black); }
 .nav__links a.is-active { color: var(--black); border-bottom-color: var(--black); }
+.nav__right { display: flex; align-items: center; gap: var(--sp-4); }
+.langtoggle { display: inline-flex; border: var(--rule-thin) solid var(--black); }
+.langtoggle__btn { font-size: var(--fs-100); font-weight: 700; letter-spacing: .08em; padding: .35em .6em; background: var(--white); color: var(--black); border: 0; cursor: pointer; line-height: 1; }
+.langtoggle__btn + .langtoggle__btn { border-left: var(--rule-thin) solid var(--black); }
+.langtoggle__btn.is-active { background: var(--black); color: var(--white); }
 .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px; }
 .nav__toggle span { width: 24px; height: 2px; background: var(--black); }
 @media (max-width: 800px) {

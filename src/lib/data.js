@@ -38,23 +38,30 @@ function parseCsv(text) {
   return data
 }
 
-async function fetchCsv(file) {
-  const res = await fetch(`${BASE}data/${file}`)
+// Swahili datasets live in /public/data/sw/; English at /public/data/. IDs are
+// identical across languages, so routing and cross-references are unaffected;
+// only the display text differs.
+function folderFor(lang) {
+  return lang === 'sw' ? `${BASE}data/sw/` : `${BASE}data/`
+}
+
+async function fetchCsv(file, lang) {
+  const res = await fetch(`${folderFor(lang)}${file}`)
   if (!res.ok) throw new Error(`Failed to load ${file}: ${res.status}`)
   return parseCsv(await res.text())
 }
 
-// Load everything once and cache the promise so repeated calls are cheap.
-let _cache = null
-export function loadData() {
-  if (_cache) return _cache
-  _cache = (async () => {
+// Cache one promise per language.
+const _cache = {}
+export function loadData(lang = 'en') {
+  if (_cache[lang]) return _cache[lang]
+  _cache[lang] = (async () => {
     const entries = await Promise.all(
-      Object.entries(FILES).map(async ([key, file]) => [key, await fetchCsv(file)]),
+      Object.entries(FILES).map(async ([key, file]) => [key, await fetchCsv(file, lang)]),
     )
     return Object.fromEntries(entries)
   })()
-  return _cache
+  return _cache[lang]
 }
 
 // ---- Typed accessors (built on the loaded bundle) ----

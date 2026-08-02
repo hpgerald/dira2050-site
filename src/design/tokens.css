@@ -1,7 +1,7 @@
 /* ============================================================
-   Dira 2050 — Design tokens
+   Dira 2050 - Design tokens
    Editorial system inspired by Pentagram: neo-grotesque type, strict
-   grid, thin rules, generous whitespace. Monochrome only — black,
+   grid, thin rules, generous whitespace. Monochrome only - black,
    white, grey. Meaning comes from typography and layout, not colour.
    ============================================================ */
 :root {
@@ -29,7 +29,7 @@
   --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: var(--font-sans);
 
-  /* Editorial type scale — large, tight, confident */
+  /* Editorial type scale - large, tight, confident */
   --fs-100: 0.75rem;
   --fs-200: 0.8125rem;
   --fs-300: 1rem;                                     /* body */

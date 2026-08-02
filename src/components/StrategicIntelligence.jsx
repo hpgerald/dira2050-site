@@ -1,17 +1,18 @@
 import { useMemo, useState } from 'react'
 import { pipes } from '../lib/data.js'
 import Basis from './Basis.jsx'
+import { useLang } from '../i18n.jsx'
 
 /*
-  Opportunities & Strategic Intelligence — the analytical "second heart" of the
-  platform. It goes beyond summarising the document to surface the opportunities,
-  skills, sector outlook and strategic signals implied by it. Everything is tagged
-  Documented (stated in the text) vs Inferred (our analysis). Monochrome, built
-  from the intel_*.csv datasets.
+  Opportunities & Strategic Intelligence - the analytical "second heart" of the
+  platform. Enum-like values (type, basis, demand, signal, category) stay in
+  English in the CSVs and are translated for display, so grouping/filtering work
+  identically in both languages.
 */
 const STRAT_ORDER = ['Priority', 'Dependency', 'Capability gap', 'Bottleneck', 'Leverage point', 'Risk']
 
 export default function StrategicIntelligence({ data }) {
+  const { t } = useLang()
   const audiences = data.intelAudiences
   const [aud, setAud] = useState(audiences[0]?.id)
   const active = audiences.find((a) => a.id === aud) || audiences[0]
@@ -36,25 +37,24 @@ export default function StrategicIntelligence({ data }) {
     <section className="si" aria-labelledby="si-title">
       <hr className="rule rule--strong" />
       <div className="cols">
-        <div className="cols__label">Deep dive</div>
+        <div className="cols__label">{t('si.deepDive')}</div>
         <div>
-          <span className="eyebrow">Opportunities &amp; Strategic Intelligence</span>
-          <h2 id="si-title">Don't just read the plan — find your place in it.</h2>
-          <p className="measure">Every national strategy quietly signals where investment, jobs, skills and growth
-          are heading. This layer extracts that intelligence from Dira 2050 and turns it into decisions you can act on.</p>
+          <span className="eyebrow">{t('si.eyebrow')}</span>
+          <h2 id="si-title">{t('si.h2')}</h2>
+          <p className="measure">{t('si.lead')}</p>
           <p className="si-legend">
-            <Basis value="Documented" /> stated in the document.
-            <Basis value="Inferred" /> our analysis of what it implies.
+            <Basis value="Documented" /> {t('si.legendDoc')}
+            <Basis value="Inferred" /> {t('si.legendInf')}
           </p>
         </div>
       </div>
 
-      {/* 1 · Audience-specific intelligence */}
+      {/* Audience-specific intelligence */}
       <div className="si-block">
         <div className="cols">
-          <div className="cols__label">Intelligence for…</div>
+          <div className="cols__label">{t('si.forLabel')}</div>
           <div>
-            <div className="si-audbar" role="group" aria-label="Choose your role">
+            <div className="si-audbar" role="group" aria-label={t('si.forLabel')}>
               {audiences.map((a) => (
                 <button key={a.id} type="button" aria-pressed={a.id === aud}
                   className={`si-aud ${a.id === aud ? 'is-active' : ''}`} onClick={() => setAud(a.id)}>
@@ -62,35 +62,33 @@ export default function StrategicIntelligence({ data }) {
                 </button>
               ))}
             </div>
-
             <div className="si-panel">
               <p className="si-why">{active.why}</p>
               <div className="si-grid">
-                <IntelList label="Opportunities" items={pipes(active.opportunities)} />
-                <IntelList label="Actions to consider" items={pipes(active.actions)} />
-                <IntelList label="Skills to build" items={pipes(active.skills)} />
-                <IntelList label="Sectors to watch" items={pipes(active.sectors)} />
-                <IntelList label="Institutions to engage" items={pipes(active.engage)} />
+                <IntelList label={t('si.opportunities')} items={pipes(active.opportunities)} />
+                <IntelList label={t('si.actions')} items={pipes(active.actions)} />
+                <IntelList label={t('si.skills')} items={pipes(active.skills)} />
+                <IntelList label={t('si.sectors')} items={pipes(active.sectors)} />
+                <IntelList label={t('si.engage')} items={pipes(active.engage)} />
               </div>
-              <p className="si-tagline"><Basis value="Inferred" /> tailored analysis for {active.audience.toLowerCase()}.</p>
+              <p className="si-tagline"><Basis value="Inferred" /> {t('si.tailored')(active.audience.toLowerCase())}</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2 · Sector outlook */}
+      {/* Sector outlook */}
       <div className="si-block">
         <div className="cols">
-          <div className="cols__label">Sector outlook</div>
+          <div className="cols__label">{t('si.outlookLabel')}</div>
           <div>
-            <p className="measure">Where the document points the most attention. Bars show relative strategic
-            emphasis (1–5), read from the plan's targets, drivers and named sectors.</p>
+            <p className="measure">{t('si.outlookIntro')}</p>
             <ul className="si-sectors">
               {sectors.map((s) => (
                 <li key={s.sector} className="si-sector">
                   <div className="si-sector__head">
                     <span className="si-sector__name">{s.sector}</span>
-                    <span className="si-sector__signal">{s.signal}</span>
+                    <span className="si-sector__signal">{t(`maps.signal.${s.signal}`)}</span>
                   </div>
                   <span className="si-meter" aria-hidden="true">
                     {[1, 2, 3, 4, 5].map((i) => (
@@ -105,24 +103,24 @@ export default function StrategicIntelligence({ data }) {
         </div>
       </div>
 
-      {/* 3 · Opportunity map */}
+      {/* Opportunity map */}
       <div className="si-block">
         <div className="cols">
-          <div className="cols__label">Opportunity map</div>
+          <div className="cols__label">{t('si.mapLabel')}</div>
           <div>
-            <div className="filterbar" role="group" aria-label="Filter opportunities">
-              {oppTypes.map((t) => (
-                <button key={t} className={`filterbar__btn ${oppType === t ? 'is-active' : ''}`}
-                  aria-pressed={oppType === t} onClick={() => setOppType(t)}>{t}</button>
+            <div className="filterbar" role="group" aria-label={t('si.mapLabel')}>
+              {oppTypes.map((ty) => (
+                <button key={ty} className={`filterbar__btn ${oppType === ty ? 'is-active' : ''}`}
+                  aria-pressed={oppType === ty} onClick={() => setOppType(ty)}>{ty === 'All' ? t('targets.filters.all') : t(`maps.oppType.${ty}`)}</button>
               ))}
             </div>
             <div className="si-opps">
               {opps.map((o) => (
                 <article key={o.id} className="si-opp">
-                  <div className="si-opp__top"><span className="si-opp__type">{o.type}</span><Basis value={o.basis} /></div>
+                  <div className="si-opp__top"><span className="si-opp__type">{t(`maps.oppType.${o.type}`)}</span><Basis value={o.basis} /></div>
                   <h4 className="si-opp__title">{o.title}</h4>
                   <p className="si-opp__desc">{o.description}</p>
-                  <p className="si-opp__meta"><span>{o.who}</span><span className="si-opp__link">{o.linked_area} · p.{o.source_page}</span></p>
+                  <p className="si-opp__meta"><span>{o.who}</span><span className="si-opp__link">{o.linked_area} · {t('common.pageAbbr')}{o.source_page}</span></p>
                 </article>
               ))}
             </div>
@@ -130,18 +128,18 @@ export default function StrategicIntelligence({ data }) {
         </div>
       </div>
 
-      {/* 4 · Skill demand */}
+      {/* Skill demand */}
       <div className="si-block">
         <div className="cols">
-          <div className="cols__label">Skills in demand</div>
+          <div className="cols__label">{t('si.skillsLabel')}</div>
           <div>
-            <p className="measure">The competencies the plan will pull on — what to study, teach or reskill into.</p>
+            <p className="measure">{t('si.skillsIntro')}</p>
             <ul className="si-skills">
               {skills.map((s) => (
                 <li key={s.skill} className="si-skill">
                   <div className="si-skill__head">
                     <span className="si-skill__name">{s.skill}</span>
-                    <span className={`si-demand si-demand--${String(s.demand).toLowerCase()}`}>{s.demand} demand</span>
+                    <span className={`si-demand si-demand--${String(s.demand).toLowerCase()}`}>{t('si.demand')(t(`maps.demand.${s.demand}`))}</span>
                   </div>
                   <p className="si-skill__why">{s.why_matters}</p>
                   <p className="si-skill__where"><span>{s.where_in_strategy}</span> <Basis value={s.basis} /></p>
@@ -152,21 +150,18 @@ export default function StrategicIntelligence({ data }) {
         </div>
       </div>
 
-      {/* 5 · Strategic briefing */}
+      {/* Strategic briefing */}
       <div className="si-block">
         <div className="cols">
-          <div className="cols__label">Strategic briefing</div>
+          <div className="cols__label">{t('si.briefingLabel')}</div>
           <div>
-            <p className="measure">The systemic picture: what the plan prioritises, what it depends on, where it's
-            weak, and the levers most likely to move it.</p>
+            <p className="measure">{t('si.briefingIntro')}</p>
             {strat.map(([cat, rows]) => (
               <div key={cat} className="si-strat">
-                <h4 className="si-strat__cat">{cat}{rows.length > 1 ? 's' : ''}</h4>
+                <h4 className="si-strat__cat">{rows.length > 1 ? t(`maps.categoryPlural.${cat}`) : t(`maps.category.${cat}`)}</h4>
                 <ul className="si-strat__list">
                   {rows.map((r, i) => (
-                    <li key={i} className="si-strat__item">
-                      <span>{r.insight}</span> <Basis value={r.basis} />
-                    </li>
+                    <li key={i} className="si-strat__item"><span>{r.insight}</span> <Basis value={r.basis} /></li>
                   ))}
                 </ul>
               </div>

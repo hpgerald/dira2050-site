@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 /*
-  DriverIndex — the navigation "hub", styled after editorial index tables
+  DriverIndex - the navigation "hub", styled after editorial index tables
   (Pentagram-style): a numbered list where each row is a large type target
   that inverts to black-on-white on hover/focus. Replaces the earlier star.
 

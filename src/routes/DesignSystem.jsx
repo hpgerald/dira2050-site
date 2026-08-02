@@ -19,7 +19,7 @@ export default function DesignSystem() {
         <div>
           <h1>An editorial system in black, white and grey.</h1>
           <p className="measure">Inspired by Pentagram: neo-grotesque type, a strict grid, thin rules and generous
-          whitespace. Meaning comes from scale, weight and layout — never colour.</p>
+          whitespace. Meaning comes from scale, weight and layout, never colour.</p>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ export default function DesignSystem() {
       <section className="cols">
         <div className="cols__label">Typography</div>
         <div className="ds__scale">
-          <span className="eyebrow">Eyebrow — Inter, uppercase, tracked</span>
+          <span className="eyebrow">Eyebrow: Inter, uppercase, tracked</span>
           <h1>Display heading</h1>
           <h2>Section heading</h2>
           <h3>Subsection heading</h3>

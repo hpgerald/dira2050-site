@@ -4,6 +4,7 @@ import { getPillars, getEnablers } from '../lib/data.js'
 import DriverIndex from '../components/Pentagram.jsx'
 import StatCard from '../components/StatCard.jsx'
 import { usePageTitle } from '../usePageTitle.js'
+import { useLang } from '../i18n.jsx'
 
 // Pick specific headline targets by id (the three biggest national numbers).
 function headline(data) {
@@ -12,86 +13,68 @@ function headline(data) {
 }
 
 export default function Home() {
-  usePageTitle(null, 'A plain-language, data-driven guide to the Tanzania Development Vision 2050 — its goals, targets, pillars, drivers, the opportunities it creates, and what it means for you.')
+  const { t } = useLang()
+  usePageTitle(null, t('home.lead'))
   const { data, loading, error } = useData()
 
   return (
     <>
-      {/* Hero */}
       <section className="hero">
         <div className="container">
-          <span className="eyebrow">Tanzania Development Vision 2050 · Dira 2050</span>
-          <h1 className="hero__title">The Tanzania<br />we want by 2050.</h1>
-          <p className="hero__lead">
-            A 25-year national plan to become an industrialised, knowledge-based, upper-middle-income
-            country — with a one-trillion-dollar economy and a good quality of life for every citizen.
-            Here is what it says, in plain language.
-          </p>
+          <span className="eyebrow">{t('home.eyebrow')}</span>
+          <h1 className="hero__title">{t('home.titleA')}<br />{t('home.titleB')}</h1>
+          <p className="hero__lead">{t('home.lead')}</p>
           <p className="hero__cta">
-            <Link className="btn" to="/vision">Start with the Vision</Link>
-            <Link className="btn btn--ghost" to="/targets">See the targets</Link>
+            <Link className="btn" to="/vision">{t('home.ctaStart')}</Link>
+            <Link className="btn btn--ghost" to="/targets">{t('home.ctaTargets')}</Link>
           </p>
         </div>
       </section>
 
       <hr className="rule rule--strong" />
 
-      {loading && <p className="container section">Loading…</p>}
-      {error && <p className="container section" role="alert">Could not load data: {String(error.message)}</p>}
+      {loading && <p className="container section">{t('common.loading')}</p>}
+      {error && <p className="container section" role="alert">{t('common.error')}</p>}
 
       {!loading && !error && (
         <>
-          {/* Headline figures */}
           <section className="container section cols">
-            <div className="cols__label">The goal · by 2050</div>
+            <div className="cols__label">{t('home.goalLabel')}</div>
             <div className="grid-stats">
-              {headline(data).map((t) => (
-                <StatCard
-                  key={t.id}
-                  value={t.target_value ?? '—'}
-                  unit={t.unit}
-                  label={t.indicator}
-                  baseline={t.baseline_value}
-                  baselineYear={t.baseline_year}
-                  targetYear={t.target_year}
-                />
+              {headline(data).map((tg) => (
+                <StatCard key={tg.id} value={tg.target_value ?? '–'} unit={tg.unit} label={tg.indicator}
+                  baseline={tg.baseline_value} baselineYear={tg.baseline_year} targetYear={tg.target_year} />
               ))}
             </div>
           </section>
 
           <hr className="rule" />
 
-          {/* Three pillars */}
           <section className="container section cols">
-            <div className="cols__label">Three pillars</div>
+            <div className="cols__label">{t('home.pillarsLabel')}</div>
             <div>
-              <p className="measure">Everything in Dira 2050 stands on three pillars — and beneath them, a
-              foundation of good governance, peace and stability.</p>
-              <DriverIndex items={getPillars(data)} basePath="/pillars" ariaLabel="The three pillars" />
+              <p className="measure">{t('home.pillarsIntro')}</p>
+              <DriverIndex items={getPillars(data)} basePath="/pillars" ariaLabel={t('home.pillarsLabel')} />
             </div>
           </section>
 
           <hr className="rule" />
 
-          {/* Five drivers — the hub */}
           <section className="container section cols">
-            <div className="cols__label">Five drivers</div>
+            <div className="cols__label">{t('home.driversLabel')}</div>
             <div>
-              <p className="measure">Five catalytic drivers power the whole Vision. They are the engine behind the
-              pillars — pick one to explore.</p>
-              <DriverIndex items={getEnablers(data)} basePath="/enablers" ariaLabel="The five Drivers" />
+              <p className="measure">{t('home.driversIntro')}</p>
+              <DriverIndex items={getEnablers(data)} basePath="/enablers" ariaLabel={t('home.driversLabel')} />
             </div>
           </section>
 
           <hr className="rule rule--strong" />
 
-          {/* Closing */}
           <section className="container section">
             <div className="closing">
-              <h2>This Vision belongs to everyone.</h2>
-              <p className="measure">Curious what it means for your own life — your job, your bills, your children's
-              school? Read the plain-language guide.</p>
-              <p><Link className="btn" to="/what-it-means">What it means for you</Link></p>
+              <h2>{t('home.closingH2')}</h2>
+              <p className="measure">{t('home.closingP')}</p>
+              <p><Link className="btn" to="/what-it-means">{t('home.closingCta')}</Link></p>
             </div>
           </section>
         </>

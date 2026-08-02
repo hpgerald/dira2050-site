@@ -1,0 +1,6 @@
+id,name,summary,pentagon_position,color,icon
+logistics,"Usafirishaji Fungamanishi","Kuifanya Tanzania kuwa kitovu cha biashara kikanda kwa kuboresha reli, bandari na barabara ili kuwezesha usafirishaji wenye ufanisi wa bidhaa, huduma na watu.",1,#1E8A4C,logistics
+energy,"Nishati","Kutoa nishati ya uhakika, nafuu na endelevu ili kuwezesha viwanda, kuongeza tija na kuifanya Tanzania kuwa kinara wa nishati kikanda.",2,#F6B301,energy
+science-tech,"Sayansi na Teknolojia","Kutumia teknolojia za kisasa kutatua changamoto za ndani na kuongeza tija katika kilimo, afya na viwanda.",3,#0091C7,science
+rnd,"Utafiti na Maendeleo","Kuchochea ubunifu na sera zenye msingi wa ushahidi kupitia ushirikiano baina ya vyuo, viwanda na serikali.",4,#6D4AA7,research
+digital,"Mageuzi ya Kidijitali","Kutumia teknolojia kuboresha tija, utoaji wa huduma na utawala huku ikidumisha jamii jumuishi ya kidijitali.",5,#E4572E,digital
