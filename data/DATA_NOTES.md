@@ -1,11 +1,11 @@
-# DATA_NOTES — Phase 1 extraction
+# DATA_NOTES: Phase 1 extraction
 
 Source: *The Tanzania Development Vision 2050 (Dira 2050)*, National Planning Commission, 2025.
 Official PDF: https://www.planning.go.tz/uploads/documents/en-1752762713-THE%20TANZANIA%20DEVELOPMENT%20VISION%202050.pdf
 
 `source_page` values refer to the document's **printed page numbers** (the roman/arabic numbers inside the report), not PDF sheet order.
 
-## Document structure (as found — corrects the seed)
+## Document structure (as found, corrects the seed)
 - The Vision has a **Foundation** (Governance, Peace, Security & Stability) + **3 Pillars** + **5 Drivers** + **Transformative Sectors**.
 - The document calls the five enablers **"Drivers"** (Section 5 / "catalytic drivers"), not "enablers." UI copy should probably say "Drivers" to match the official term. Kept file name `enablers.csv` for the build contract; `id`s are stable.
 - The four headline **Goals** (Section 2.2) map to pillars/drivers as:
@@ -14,7 +14,7 @@ Official PDF: https://www.planning.go.tz/uploads/documents/en-1752762713-THE%20T
   - Goal 3 → Environment pillar
   - Goal 4 → Digital Transformation driver
 
-## Second pass — COMPLETE (full 76-page PDF parsed)
+## Second pass: COMPLETE (full 76-page PDF parsed)
 The whole document has now been extracted directly from the PDF (76 sheets). PDF font-glyph corruption (`(cid:NN)` codes) was decoded with a `chr(N+29)` mapping, recovering the Drivers, Sectors and Implementation sections that were missing from the first web-fetched pass. All datasets below are now populated from the source:
 - **Drivers (Section 5):** energy per-capita electricity 170 kWh (2024) to 3,000 kWh (2050); transmission losses 16% to below 10%; Julius Nyerere Hydropower 2,115 MW; logistics = 35-45% of import costs; R&D financing at least 1% of GDP. Each driver's official "Aspirations" captured in `aspirations.csv`.
 - **Transformative sectors (Section 6):** nine sectors with real baselines in `sectors.csv` + `sector_kpis.csv` (Agriculture 26.5% GDP / 65% jobs / 30% exports; Tourism 25% exports; Manufacturing 8.1% GDP growing 8%/yr; Mining 9% GDP). The five official selection criteria are in `sector_criteria.csv`.

@@ -1,0 +1,16 @@
+skill,category,demand,why_matters,where_in_strategy,basis
+Sayansi ya takwimu na uchambuzi,Digital,High,"Mipango yenye msingi wa ushahidi na mfumo wa takwimu wa kitaifa hutegemea watu wanaoweza kugeuza takwimu kuwa maamuzi.","Mageuzi ya Kidijitali; utekelezaji wenye ushahidi (M&E)",Inferred
+Akili bandia (AI),Digital,High,"AI imetajwa miongoni mwa teknolojia za kisasa kwa tija na utoaji wa huduma.","Sayansi na Teknolojia; Mageuzi ya Kidijitali",Documented
+Usalama wa mtandao,Digital,High,"Kupanuka kwa e-serikali na miundombinu ya takwimu kunaongeza haja ya kulinda mifumo na umiliki wa takwimu.","Mageuzi ya Kidijitali",Inferred
+GIS na taarifa za kijiografia,Digital,Medium,"Uchambuzi wa kijiografia unasaidia usimamizi wa ardhi, kilimo, miundombinu na mipango ya tabianchi.","Mazingira; utekelezaji wenye ushahidi",Inferred
+Ufuatiliaji na Tathmini,Policy,High,"Mfumo wa M&E wa kidijitali na viashiria wazi ni kiini cha utekelezaji wenye uwajibikaji.","Mfumo wa utekelezaji (7.5)",Documented
+Fedha za umma na upangaji wa PPP,Policy,High,"Kupunguza utegemezi wa misaada na kugharimia kupitia PPP kunahitaji ujuzi imara wa fedha za umma na mikataba.","Utekelezaji; uendelevu wa kifedha",Documented
+Uhandisi wa nishati mbadala,Engineering,High,"Kupanua maji, jua, upepo, jotoardhi na nyuklia kunahitaji wahandisi na mafundi wa nishati.","Kichocheo cha Nishati",Documented
+Teknolojia ya kilimo,Agriculture,High,"Kuboresha mazao, mifugo, uvuvi na misitu kunahitaji ujuzi wa kilimo-teknolojia, ufugaji samaki na mnyororo wa ubaridi.","Sekta ya Kilimo",Inferred
+Uhandisi wa viwanda,Engineering,High,"Uongezaji thamani na kitovu shindani cha viwanda hutegemea wahandisi wa viwanda na michakato.","Sekta ya Viwanda",Documented
+Usafirishaji na mnyororo wa ugavi,Operations,High,"Kupunguza gharama za usafirishaji (35-45% ya uagizaji) na kuendesha usafiri wa aina mbalimbali kunahitaji utaalamu wa mnyororo wa ugavi.","Kichocheo cha Usafirishaji Fungamanishi",Documented
+Kukabiliana na tabianchi,Environment,Medium,"Ustahimilivu wa tabianchi na usalama wa mazingira ni nguzo kamili ya Dira.","Nguzo ya Mazingira",Documented
+Utafiti na ubiasharishaji wa haki miliki,Research,Medium,"Kugeuza utafiti kuwa bidhaa kunahitaji ujuzi wa usimamizi wa ubunifu na haki miliki.","Kichocheo cha R&D",Documented
+Utaalamu wa afya,Health,Medium,"Huduma za afya kwa wote na kutokomeza vifo vya uzazi kunahitaji wataalamu zaidi wa afya.","Nguzo ya Watu; afya",Documented
+Teknolojia ya kifedha,Digital,Medium,"Kupanua ujumuishaji wa kifedha kunajengwa juu ya fedha za simu na benki za kidijitali.","Huduma za kifedha; Mageuzi ya Kidijitali",Documented
+Ukuzaji wa programu na bidhaa,Digital,High,"Huduma za kidijitali, e-serikali na startups vyote vinategemea vipaji vya programu.","Mageuzi ya Kidijitali",Inferred
