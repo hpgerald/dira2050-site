@@ -8,7 +8,7 @@ import { useLang } from '../i18n.jsx'
 */
 export default function TargetList({ targets = [] }) {
   const { t } = useLang()
-  if (!targets.length) return <p className="measure">—</p>
+  if (!targets.length) return <p className="measure">–</p>
   return (
     <ul className="tlist">
       {targets.map((tg) => {

@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { LanguageProvider } from './i18n.jsx'
 import './design/tokens.css'
 import './design/components.css'
+import './design/pro.css'
 
 // Real, crawlable URLs (good for SEO). GitHub Pages has no server rewrites, so a
 // 404.html redirect (see public/404.html) restores deep links on hard refresh.

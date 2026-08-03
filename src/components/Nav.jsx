@@ -13,6 +13,7 @@ export default function Nav() {
     ['/timeline', t('nav.timeline')],
     ['/what-it-means', t('nav.forYou')],
     ['/data', t('nav.data')],
+    ['/pro', t('pro.nav'), true], // PRO - new section, immediately after DATA
   ]
 
   return (
@@ -23,9 +24,9 @@ export default function Nav() {
         </Link>
 
         <nav className={`nav__links ${open ? 'is-open' : ''}`} aria-label="Primary">
-          {LINKS.map(([to, label]) => (
+          {LINKS.map(([to, label, isPro]) => (
             <NavLink key={to} to={to} onClick={() => setOpen(false)}
-              className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+              className={({ isActive }) => [isActive ? 'is-active' : '', isPro ? 'pro-navlink' : ''].filter(Boolean).join(' ') || undefined}>
               {label}
             </NavLink>
           ))}

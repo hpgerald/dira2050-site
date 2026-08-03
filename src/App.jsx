@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
@@ -14,6 +15,10 @@ import About from './routes/About.jsx'
 import DesignSystem from './routes/DesignSystem.jsx'
 import Debug from './routes/Debug.jsx'
 import NotFound from './routes/NotFound.jsx'
+
+// PRO is lazy-loaded so its libraries (framer-motion, later d3) only download
+// when a visitor enters /pro; the base site bundle stays light.
+const ProApp = lazy(() => import('./pro/ProApp.jsx'))
 
 // Phase 8: all content pages live. Full site.
 export default function App() {
@@ -32,6 +37,7 @@ export default function App() {
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/what-it-means" element={<WhatItMeans />} />
           <Route path="/data" element={<DataPage />} />
+          <Route path="/pro/*" element={<Suspense fallback={<div className="container section" />}><ProApp /></Suspense>} />
           <Route path="/about" element={<About />} />
           <Route path="/design" element={<DesignSystem />} />
           <Route path="/debug" element={<Debug />} />

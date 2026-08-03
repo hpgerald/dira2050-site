@@ -23,6 +23,7 @@ const FILES = {
   intelSkills: 'intel_skills.csv',
   intelSectors: 'intel_sectors_outlook.csv',
   intelStrategic: 'intel_strategic.csv',
+  regions: 'regions.csv',
 }
 
 // Split a pipe-delimited cell into a clean array.
@@ -81,3 +82,5 @@ export const aspirationsForEnabler = (d, enablerId) =>
   d.aspirations.filter((a) => a.enabler_id === enablerId)
 export const kpisForSector = (d, sectorId) =>
   d.sectorKpis.filter((k) => k.sector === sectorId)
+export const outlookForSector = (d, sectorId) =>
+  d.intelSectors.find((o) => o.id === sectorId) || null
