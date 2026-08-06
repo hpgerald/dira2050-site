@@ -1,0 +1,49 @@
+id,cluster,name,summary,source_page
+macro-stability,Macroeconomy,Macroeconomic stability and predictability,"Keeping growth high and prices stable, with a larger economy, higher incomes and deeper financial inclusion.",29
+fiscal,Macroeconomy,Fiscal sustainability,"Raising more domestic revenue and keeping debt affordable, so the plan can actually be paid for.",26
+external-sector,Macroeconomy,External-sector resilience,"Stronger, more diversified exports and healthy reserves to weather external shocks.",27
+agriculture,Economic sectors,Agriculture,"The backbone of the economy and jobs, being modernised for higher value and fewer losses.",30
+manufacturing,Economic sectors,Industry and manufacturing,"Moving from raw materials to finished goods, the core of industrialisation.",31
+construction,Economic sectors,Construction,"Building the housing and infrastructure a growing, urbanising country needs.",32
+mining,Economic sectors,Mining and quarrying,"Turning minerals into value at home, not just raw exports.",33
+oilgas,Economic sectors,Oil and gas,Monetising natural gas for energy security and industry.,34
+tourism,Economic sectors,Tourism,"A top export earner, aiming to become a leading African destination.",35
+financial,Economic sectors,Financial sector,"The economy's lifeblood, channelling savings into productive investment, with deeper inclusion and stronger institutions.",36
+sports-creative,Economic sectors,Sports and creative industries,"One of the fastest-growing sectors, turning music, film, fashion and sport into jobs and exports.",36
+housing,Economic sectors,Housing and real estate,"Homes, land and modern settlements for a fast-urbanising nation, backed by digital land records.",37
+trade,Economic sectors,Trade and commerce,"Deeper participation in African and global trade, and e-commerce for small businesses.",39
+business-sector,Economic sectors,A robust business sector,"A stronger private sector driving investment, credit and jobs.",40
+regional-coop,Economic sectors,Regional and global cooperation,Attracting foreign investment and deepening regional and global economic ties.,41
+formalisation,Economic sectors,Formalising the economy,"Bringing the vast informal economy into the formal system to widen the tax base and extend protection.",42
+education,People and society,"A well-educated, skilled society","Building the skilled, learning society a modern economy needs.",43
+workforce,People and society,"A capable, motivated workforce","Shifting the workforce from low skills toward medium and high skills for a modern economy.",46
+demographic,People and society,The demographic dividend,"Turning a young, growing population into a productivity dividend by easing the dependency burden.",47
+employment,People and society,Labour market and employment,"More and better jobs, especially for youth and people with disabilities.",47
+social-protection,People and society,Social protection and inclusion,"Widening the safety net so the poor, elderly, disabled and children are covered.",48
+health,People and society,Health care for all,"Universal health coverage and a stronger, better-funded system.",50
+food-security,People and society,Food security and nutrition,"Better nutrition for mothers and children, cutting stunting, anaemia and malnutrition.",51
+water,People and society,Water and sanitation,Clean water and sanitation for every household.,53
+cohesive-society,People and society,A cohesive society,"Safer communities, fewer road deaths, and action against crime and violence.",54
+rural,People and society,Inclusive rural development,Lifting rural areas through a measured transformation of incomes and services.,55
+cooperatives,People and society,Co-operatives transformation,Professionalising cooperatives so they reach millions more members and add value.,56
+middle-class,People and society,A growing middle class,Growing the middle-income class from a small minority toward the African average.,57
+environment-integrity,Environment,Environmental integrity,"Protecting forests, wetlands and biodiversity while cutting deforestation and expanding conservation.",58
+urbanisation,Environment,Sustainable urbanisation,"Planning fast-growing cities, surveying land and formalising unplanned settlements.",59
+land-management,Environment,Sustainable land management,Securing land tenure and setting land aside for industry.,60
+climate-resilience,Environment,Climate-change resilience,"Cutting emissions, scaling renewables and clean cooking, and reducing climate damage.",61
+early-warning,Environment,Early-warning systems,Investing in disaster risk reduction and getting timely alerts to more people.,62
+carbon-trade,Environment,Participation in carbon trade,Turning forests and ecosystems into carbon revenue through certified projects.,63
+blue-economy,Environment,The blue economy,"Harnessing the ocean, lakes and coast, from fisheries to marine tourism and protected waters.",64
+energy,Enablers,Energy,"Doubling power capacity and reaching three-quarters of households, with cleaner cooking.",65
+logistics,Enablers,Integrated logistics,Faster-growing transport and logistics to move goods and connect markets.,66
+science-tech,Enablers,"Science, technology and innovation",Climbing the global innovation rankings and lifting research spending.,67
+rnd,Enablers,Research and development,Grounding government decisions in local research evidence.,68
+data-ecosystem,Enablers,A data-driven ecosystem,Better statistics and open data to plan and govern with evidence.,69
+digital-transformation,Enablers,Digital transformation,"A bigger digital economy, more smartphones and stronger cybersecurity.",70
+ict-infrastructure,Enablers,ICT infrastructure and services,"Broadband, internet access and digital skills for everyone.",71
+communication,Enablers,Communication and courier services,"Wider mobile, postal and courier coverage, including 4G and 5G.",72
+business-environment,Enablers,Business environment and investment,A more predictable, better-regulated environment for investment.,73
+good-governance,Governance,"Good governance, security and stability",Keeping the country stable and clean while climbing rule-of-law and anti-corruption rankings.,74
+local-governance,Governance,Strong local governance,More capable and transparent councils delivering services closer to citizens.,75
+digital-governance,Governance,Digital governance and smart data,Government services online and digital ID for most citizens.,76
+mindset-change,Governance,Mindset change to embed reforms,"Shifting attitudes so reforms stick, tracked by the Social Progress Index.",77

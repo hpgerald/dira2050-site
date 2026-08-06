@@ -1,0 +1,5 @@
+id,indicator,from,to,unit,source_page
+growth,Real GDP growth,5.5,10.5,%,xix
+domrev,Domestic revenue,14.9,20,% of GDP,93
+tax,Tax-to-GDP ratio,13.1,18,%,93
+nontax,Non-tax revenue,2.7,5.0,% of GDP,93
