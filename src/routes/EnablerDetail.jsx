@@ -25,7 +25,7 @@ export default function EnablerDetail() {
 
   return (
     <article className="container section stack">
-      <p className="eyebrow"><Link to="/pillars">{t('driver.crumb')}</Link> · {t('driver.word')} {idx + 1} {t('driver.of')} {all.length}</p>
+      <p className="eyebrow"><Link to="/dira/pillars">{t('driver.crumb')}</Link> · {t('driver.word')} {idx + 1} {t('driver.of')} {all.length}</p>
       <div className="cols">
         <div className="cols__label">{t('driver.word')} {String(idx + 1).padStart(2, '0')}</div>
         <div>
@@ -61,8 +61,8 @@ export default function EnablerDetail() {
       <hr className="rule" />
 
       <nav className="pager">
-        {prev ? <Link className="pager__link" to={`/enablers/${prev.id}`}>← {prev.name}</Link> : <span />}
-        {next ? <Link className="pager__link pager__link--next" to={`/enablers/${next.id}`}>{next.name} →</Link> : <span />}
+        {prev ? <Link className="pager__link" to={`/dira/enablers/${prev.id}`}>← {prev.name}</Link> : <span />}
+        {next ? <Link className="pager__link pager__link--next" to={`/dira/enablers/${next.id}`}>{next.name} →</Link> : <span />}
       </nav>
     </article>
   )

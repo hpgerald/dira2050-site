@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="container section">
       <span className="eyebrow">{t('notFound.code')}</span>
       <h1>{t('notFound.title')}</h1>
-      <p>{t('notFound.body')} <Link to="/">{t('notFound.home')}</Link>.</p>
+      <p>{t('notFound.body')} <Link to="/dira">{t('notFound.home')}</Link>.</p>
     </div>
   )
 }

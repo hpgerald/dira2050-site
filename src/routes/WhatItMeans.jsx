@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import { useData } from '../useData.js'
 import GlossaryTerm from '../components/GlossaryTerm.jsx'
-import StrategicIntelligence from '../components/StrategicIntelligence.jsx'
+import Basis from '../components/Basis.jsx'
 import { usePageTitle } from '../usePageTitle.js'
 import { useLang } from '../i18n.jsx'
 
@@ -12,6 +13,7 @@ export default function WhatItMeans() {
   if (error) return <p className="container section" role="alert">{t('common.error')}</p>
 
   const sections = t('forYou.sections')
+  const explore = t('si.explore')
 
   return (
     <div className="container section stack">
@@ -44,7 +46,40 @@ export default function WhatItMeans() {
         </div>
       ))}
 
-      <StrategicIntelligence data={data} />
+      <hr className="rule rule--strong" />
+
+      <section className="cols">
+        <div className="cols__label">{t('si.deepDive')}</div>
+        <div>
+          <span className="eyebrow">{t('si.eyebrow')}</span>
+          <h2>{t('si.h2')}</h2>
+          <p className="measure">{t('si.lead')}</p>
+          <p className="si-legend">
+            <Basis value="Documented" /> {t('si.legendDoc')}
+            <Basis value="Inferred" /> {t('si.legendInf')}
+          </p>
+        </div>
+      </section>
+
+      <section className="cols">
+        <div className="cols__label">{t('si.exploreLabel')}</div>
+        <div>
+          <ul className="index">
+            {explore.map(([to, label, desc], i) => (
+              <li key={to} className="index__row">
+                <Link className="index__link" to={`/dira/what-it-means/${to}`}>
+                  <span className="index__num">{String(i + 1).padStart(2, '0')}</span>
+                  <span>
+                    <span className="index__name">{label}</span>
+                    <span className="index__desc">{desc}</span>
+                  </span>
+                  <span className="index__arrow" aria-hidden="true">→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </div>
   )
 }

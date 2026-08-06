@@ -24,9 +24,13 @@ export default function Home() {
           <span className="eyebrow">{t('home.eyebrow')}</span>
           <h1 className="hero__title">{t('home.titleA')}<br />{t('home.titleB')}</h1>
           <p className="hero__lead">{t('home.lead')}</p>
+          <ul className="hero__facts">
+            {t('home.facts').map((f) => <li key={f} className="hero__fact">{f}</li>)}
+          </ul>
+          <p className="hero__leadsub">{t('home.leadSub')}</p>
           <p className="hero__cta">
-            <Link className="btn" to="/vision">{t('home.ctaStart')}</Link>
-            <Link className="btn btn--ghost" to="/targets">{t('home.ctaTargets')}</Link>
+            <Link className="btn" to="/dira/vision">{t('home.ctaStart')}</Link>
+            <Link className="btn btn--ghost" to="/dira/targets">{t('home.ctaTargets')}</Link>
           </p>
         </div>
       </section>
@@ -54,7 +58,7 @@ export default function Home() {
             <div className="cols__label">{t('home.pillarsLabel')}</div>
             <div>
               <p className="measure">{t('home.pillarsIntro')}</p>
-              <DriverIndex items={getPillars(data)} basePath="/pillars" ariaLabel={t('home.pillarsLabel')} />
+              <DriverIndex items={getPillars(data)} basePath="/dira/pillars" ariaLabel={t('home.pillarsLabel')} />
             </div>
           </section>
 
@@ -64,7 +68,7 @@ export default function Home() {
             <div className="cols__label">{t('home.driversLabel')}</div>
             <div>
               <p className="measure">{t('home.driversIntro')}</p>
-              <DriverIndex items={getEnablers(data)} basePath="/enablers" ariaLabel={t('home.driversLabel')} />
+              <DriverIndex items={getEnablers(data)} basePath="/dira/enablers" ariaLabel={t('home.driversLabel')} />
             </div>
           </section>
 
@@ -74,7 +78,7 @@ export default function Home() {
             <div className="closing">
               <h2>{t('home.closingH2')}</h2>
               <p className="measure">{t('home.closingP')}</p>
-              <p><Link className="btn" to="/what-it-means">{t('home.closingCta')}</Link></p>
+              <p><Link className="btn" to="/dira/what-it-means">{t('home.closingCta')}</Link></p>
             </div>
           </section>
         </>

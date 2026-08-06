@@ -7,32 +7,33 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   const LINKS = [
-    ['/vision', t('nav.vision')],
-    ['/pillars', t('nav.pillars')],
-    ['/targets', t('nav.targets')],
-    ['/timeline', t('nav.timeline')],
-    ['/what-it-means', t('nav.forYou')],
-    ['/data', t('nav.data')],
-    ['/pro', t('pro.nav'), true], // PRO - new section, immediately after DATA
+    ['/dira/vision', t('nav.vision')],
+    ['/dira/pillars', t('nav.pillars')],
+    ['/dira/targets', t('nav.targets')],
+    ['/dira/timeline', t('nav.timeline')],
+    ['/dira/what-it-means', t('nav.forYou')],
+    ['/dira/data', t('nav.data')],
+    ['/dira/quiz', t('nav.quiz'), 'quiz'],
   ]
 
   return (
     <header className="nav">
       <div className="nav__inner">
-        <Link to="/" className="nav__brand" onClick={() => setOpen(false)}>
+        <Link to="/dira" className="nav__brand" onClick={() => setOpen(false)}>
           {t('nav.brand')} <span className="nav__brand-sub">{t('nav.brandSub')}</span>
         </Link>
 
         <nav className={`nav__links ${open ? 'is-open' : ''}`} aria-label="Primary">
-          {LINKS.map(([to, label, isPro]) => (
+          {LINKS.map(([to, label, mod]) => (
             <NavLink key={to} to={to} onClick={() => setOpen(false)}
-              className={({ isActive }) => [isActive ? 'is-active' : '', isPro ? 'pro-navlink' : ''].filter(Boolean).join(' ') || undefined}>
+              className={({ isActive }) => [isActive ? 'is-active' : '', mod ? `nav__link--${mod}` : ''].filter(Boolean).join(' ') || undefined}>
               {label}
             </NavLink>
           ))}
         </nav>
 
         <div className="nav__right">
+          <Link to="/" className="nav__hub" onClick={() => setOpen(false)}>{t('nav.hub')}</Link>
           <div className="langtoggle" role="group" aria-label={t('nav.langLabel')}>
             <button type="button" aria-pressed={lang === 'en'}
               className={`langtoggle__btn ${lang === 'en' ? 'is-active' : ''}`} onClick={() => setLang('en')}>EN</button>

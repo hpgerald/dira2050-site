@@ -1,0 +1,6 @@
+id,method,kind,purpose,cadence,source_page
+indicator,Indicator-based monitoring,Monitoring,Tracks progress against approved indicators and targets.,"Routine, via dashboards",31
+review,Performance review,Monitoring,"Assesses progress, identifies challenges and agrees corrective action.",Quarterly and annual,31
+digital,Digital / dashboard monitoring,Monitoring,Real-time data tracking and analysis for timely decisions.,"Continuous, via e-Delivery",31
+field,Field verification,Monitoring,Confirms reported progress on the ground.,Periodic field visits,31
+evaluation,Evaluation,Evaluation,Reviews whether interventions delivered results and value for money.,"Periodic, aligned with assessments",32

@@ -1,50 +1,42 @@
 import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Nav from './components/Nav.jsx'
-import Footer from './components/Footer.jsx'
-import Home from './routes/Home.jsx'
-import Vision from './routes/Vision.jsx'
-import PillarsIndex from './routes/PillarsIndex.jsx'
-import PillarDetail from './routes/PillarDetail.jsx'
-import EnablerDetail from './routes/EnablerDetail.jsx'
-import TargetsDashboard from './routes/TargetsDashboard.jsx'
-import Timeline from './routes/Timeline.jsx'
-import WhatItMeans from './routes/WhatItMeans.jsx'
-import DataPage from './routes/DataPage.jsx'
-import About from './routes/About.jsx'
-import DesignSystem from './routes/DesignSystem.jsx'
-import Debug from './routes/Debug.jsx'
-import NotFound from './routes/NotFound.jsx'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import DiraApp from './DiraApp.jsx'
+import Hub from './routes/Hub.jsx'
+import ComingSoon from './routes/ComingSoon.jsx'
 
-// PRO is lazy-loaded so its libraries (framer-motion, later d3) only download
-// when a visitor enters /pro; the base site bundle stays light.
-const ProApp = lazy(() => import('./pro/ProApp.jsx'))
+// Document sections are lazy-loaded so each downloads only when visited.
+const FrameworkApp = lazy(() => import('./framework/FrameworkApp.jsx'))
+const FydpApp = lazy(() => import('./fydp/FydpApp.jsx'))
 
-// Phase 8: all content pages live. Full site.
+/*
+  Platform router. The landing page (Hub) owns "/". Each document lives under its
+  own namespace; Dira 2050 is the only one built so far, the rest show a
+  coming-soon placeholder. Old pre-platform Dira URLs (e.g. /vision) redirect to
+  their new /dira home so existing links and bookmarks keep working.
+*/
+
+// Old top-level Dira paths that must forward to /dira/...
+const LEGACY = [
+  '/vision', '/pillars', '/pillars/:id', '/enablers/:id', '/targets',
+  '/timeline', '/what-it-means', '/data', '/about', '/design', '/debug', '/pro/*',
+]
+
+function LegacyRedirect() {
+  const loc = useLocation()
+  return <Navigate to={`/dira${loc.pathname}${loc.search}`} replace />
+}
+
 export default function App() {
   return (
-    <div className="app">
-      <a className="skip-link" href="#main">Skip to content</a>
-      <Nav />
-      <main id="main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/vision" element={<Vision />} />
-          <Route path="/pillars" element={<PillarsIndex />} />
-          <Route path="/pillars/:id" element={<PillarDetail />} />
-          <Route path="/enablers/:id" element={<EnablerDetail />} />
-          <Route path="/targets" element={<TargetsDashboard />} />
-          <Route path="/timeline" element={<Timeline />} />
-          <Route path="/what-it-means" element={<WhatItMeans />} />
-          <Route path="/data" element={<DataPage />} />
-          <Route path="/pro/*" element={<Suspense fallback={<div className="container section" />}><ProApp /></Suspense>} />
-          <Route path="/about" element={<About />} />
-          <Route path="/design" element={<DesignSystem />} />
-          <Route path="/debug" element={<Debug />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Hub />} />
+      <Route path="/dira/*" element={<DiraApp />} />
+      <Route path="/framework/*" element={<Suspense fallback={<div className="container section" />}><FrameworkApp /></Suspense>} />
+      <Route path="/fydp/*" element={<Suspense fallback={<div className="container section" />}><FydpApp /></Suspense>} />
+      <Route path="/ltpp/*" element={<ComingSoon docKey="ltpp" />} />
+      <Route path="/comms/*" element={<ComingSoon docKey="comms" />} />
+      {LEGACY.map((p) => <Route key={p} path={p} element={<LegacyRedirect />} />)}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }

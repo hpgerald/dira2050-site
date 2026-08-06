@@ -1,0 +1,235 @@
+pathway,indicator,from,to,year
+macro-stability,GDP (USD billion),81.537,118.052,2024
+macro-stability,Real GDP growth (%),5.5,10.5,2024
+macro-stability,GDP per capita (USD),1343.91,1638,2024
+macro-stability,Public debt to GDP (%),48.9,<55,2025
+macro-stability,"CPI inflation, period average (%)",3.1,3-5,2024
+macro-stability,Private sector credit growth (%),15.9,22.4,2024
+macro-stability,Domestic credit to private sector (% of GDP),16.3,25,2025
+macro-stability,Non-performing loans (% of gross loans),3.3,<5,2024
+macro-stability,"Financial inclusion, adults (%)",72.76,90,2023
+macro-stability,Adults with transactional accounts (%),72,85,2023
+macro-stability,Adults using digital payments (%),13,40,2023
+fiscal,Domestic revenue to GDP (%),14.9,20.0,2024/25
+fiscal,Tax revenue to GDP (%),13.1,18.0,2024/25
+fiscal,Non-tax revenue to GDP (%),2.7,5.0,2024/25
+fiscal,Public debt to GDP (%),47.0,<50,2024/25
+fiscal,PV of public debt to GDP,40.3,19.6,2024/25
+fiscal,PV of debt service to domestic revenue,44.3,15,2023/24
+fiscal,PV of external debt to exports,123.8,100.3,2024/25
+fiscal,Fiscal deficit (% of GDP),-3.1,-2.8,2024
+fiscal,Development expenditure (% of budget),31,35-40,2024/25
+fiscal,Average debt maturity (years),9,12,2023
+external-sector,Current account balance (% of GDP),-2.6,-2.1,2024
+external-sector,Foreign reserves (months of imports),4.5,5,2024
+external-sector,FDI (USD million),1717.6,8366.28,2024
+external-sector,Traditional exports (% of total exports),16.2,11.05,2024
+external-sector,Non-traditional exports (% of total exports),79.2,84.15,2024
+external-sector,Manufactured goods (% of non-traditional exports),18.6,29.59,2024
+agriculture,Share of GDP (%),26.3,25.6,2024
+agriculture,Real GDP growth (%),4.1,10,2024
+agriculture,Food self-sufficiency ratio,128,130,2024
+agriculture,Export value (USD billion),3.54,5,
+agriculture,Share of merchandise exports (%),24,30,2023/24
+agriculture,Post-harvest losses (%),35,10,
+agriculture,Credit (% of total credit),14.9,20,2023
+agriculture,Share of employment (%),54.2,50,2024
+manufacturing,Industrial share of GDP (%),30.4,36.5,2024
+manufacturing,Industrial GDP real growth (%),5.5,8.0,2024
+manufacturing,Manufacturing GDP share (%),7.3,8,2024
+manufacturing,Manufacturing GDP real growth (%),4.8,9.9,2024
+manufacturing,Manufacturing share of goods exports (%),22,30,
+manufacturing,Manufacturing share of total exports (%),9,15,
+manufacturing,Industrial share of employment (%),9,15,2024
+manufacturing,Manufacturing share of employment (%),6,10,2024
+construction,Share of GDP (%),12.8,15.5,2024
+construction,Real GDP growth (%),4.1,8.5,2024
+construction,Domestic-company market share (%),40,50,2023
+construction,Share of employment (%),4,6,2023
+mining,Share of GDP (%),10.1,12.5,2024
+mining,Real GDP growth (%),8.3,9,2024
+mining,Exports (% of total exports),46,55,
+mining,Exports (% of merchandise),55,60,
+oilgas,Natural gas production (million cubic feet),69538,90000,2024
+oilgas,Gas distribution network (km),177.82,267,2024
+oilgas,Gas share in electricity mix (%),63,45,2024
+tourism,Travel & Tourism Development Index rank,81/119,60/119,2021
+tourism,Accommodation share of GDP (%),1.1,1.4,2024
+tourism,Accommodation GDP real growth (%),6,8.7,2024
+tourism,Export earnings (USD billion),3.7,4.81,2024
+tourism,Export earnings (% of total),27,35,
+education,Pre-primary gross enrolment (%),89.5,100,2024
+education,Pre-primary net enrolment (%),51.2,100,2024
+education,"Pre-primary pupil-qualified teacher ratio",105:1,40:1,2024
+education,Primary gross enrolment (%),98.2,100,2023
+education,Primary net enrolment (%),81.7,100,2022
+education,Primary pupil-teacher ratio,61:1,53:1,2024
+education,Primary pupil-textbook ratio,3:1,1:1,2024
+education,Primary pupil-classroom ratio,63:1,50:1,2024
+education,"Pupil-latrine ratio, boys",42:1,25:1,2023/24
+education,"Pupil-latrine ratio, girls",39:1,20:1,2023/24
+health,"Infant mortality (per 1,000 live births)",33,27,2022
+health,"Under-five mortality (per 1,000 live births)",43,34,2022
+health,Total fertility rate (per woman),4.8,4.11,2022
+health,Skilled birth attendance (%),84,89.3,2023/24
+health,"Maternal mortality (per 100,000 live births)",104,85,2022
+health,Life expectancy (years),68.3,70.4,2025
+health,Public health spending (% of budget),11.6,14.2,2023/24
+water,Improved drinking water (%),69.5,100,2022
+water,Rural clean water (%),79.6,87.9,2023/24
+water,Urban clean water (%),90,97.2,2023/24
+water,Rural piped or protected water (%),78,94.7,2023/24
+water,Regional-centre piped water (%),92,100,2023/24
+water,"Households on public sewer, regional centres (%)",26,60,2023/24
+water,Rural improved sanitation (%),72,100,2023/24
+employment,Labour-force participation (%),73.2,74.6,2024
+employment,Employment-to-population (%),68.7,71.3,2024
+employment,Unemployment rate (%),6.2,4.4,2024
+employment,Youth unemployment (%),8.3,6.0,2024
+employment,People with disability employed (%),32.5,40,2024
+financial,"Financial inclusion, adults (%)",72,85.26,2023
+financial,Capital adequacy ratio (%),19.3,,2024
+financial,Deposit-to-GDP ratio (%),27.3,,2024
+financial,Non-performing loans (%),3.3,,2024
+financial,Digital deposits (% of GDP),27.2,,2024
+financial,Adults with formal financial access (%),50,,2024
+financial,Insurance penetration (% of GDP),2.08,,2023
+financial,MFIs digitised (%),55,,2024
+financial,Rural access to microfinance (%),19,,2023
+financial,MSMEs with active formal loans (%),19,,2023
+sports-creative,Film stakeholders with international awards,86,133,2024
+sports-creative,Film projects receiving loans,152,228,2024
+sports-creative,Sector annual growth rate (%),17.7,,2024
+sports-creative,Music artists with international awards,10,,2023/24
+sports-creative,Content on global digital platforms (%),<20,,2024
+sports-creative,Creatives receiving royalties (%),<20,,2024
+housing,Real estate share of GDP (%),2.6,3.4,2024
+housing,Housing units,13907951,17659090,2022
+housing,Mortgage-to-GDP ratio (%),0.5,2,2025
+housing,Real estate transactions done digitally (%),10,50,2025
+housing,Land surveyed (%),36,53.3,2025
+housing,Regularised properties in unplanned settlements,3347275,5584224,2025
+housing,Residential licences in unplanned settlements,25748,296295,2025
+housing,General land under informal settlements (%),59,21.0,2025
+housing,Regions with master and land-use plans (%),81,100,2025
+housing,Land protected for public use (acres),988790,1672519,2023/24
+housing,Allocated plots,3951890,10318857,
+trade,Export value (% of GDP),17,25,2023
+trade,Share in intra-African trade (%),13,25,2023
+trade,MSMEs using e-commerce (%),15,60,2023
+business-sector,Credit to private sector (TZS billion),32057.6,51348.03,2023
+business-sector,Private investment share of GDP (%),75,81.3,2024
+business-sector,Private investment share of fixed capital (%),70,87.5,2024
+business-sector,"Credit to private sector, annual growth (%)",15.9,22.4,2024
+business-sector,Commercial PSCs reporting profits (%),65,80,2023
+regional-coop,Stock of foreign private investment (USD million),23042.5,38588,2023
+regional-coop,Stock of FDI (USD million),19139.6,28752.53,2023
+regional-coop,Stock of foreign portfolio investment (USD million),204.3,659,2023
+formalisation,Informal sector share of GDP (%),55,29,2023
+formalisation,Informal employment (%),94.2,81,2024
+workforce,Workforce with high skills (%),3.0,12.0,2011
+workforce,Workforce with medium skills (%),13.0,33.0,2011
+workforce,Workforce with low skills (%),84.0,55.0,2011
+demographic,Age dependency ratio (%),87.4,79.4,2025
+demographic,"Child dependency ratio, 0-14 (%)",80.5,73.0,2025
+demographic,"Old-age dependency ratio, 65+ (%)",6.8,6.45,2025
+social-protection,Social protection coverage increase (%),28.4,42.6,2023/24
+social-protection,Health insurance coverage (%),67.8,100,2023/24
+social-protection,Social security scheme coverage (%),10.1,18.1,2023/24
+social-protection,Youth in vulnerable employment (%),42.4,28.8,2023/24
+social-protection,Children with disability in primary school (%),95,100,2023/24
+social-protection,Children aged 5-17 in child labour (%),22,0.0,2023/24
+social-protection,Reconciled child maintenance cases,39560,163905,2023/24
+food-security,Stunting in children under 5 (%),26.5,20.0,2023/24
+food-security,Wasting in children under 5 (%),2.6,2.6,2023/24
+food-security,Low birth weight (%),3.1,2.0,2023/24
+food-security,Women 15-49 with anaemia (%),23,12.0,2023/24
+food-security,Acute malnutrition in children under 5 (%),2.7,2.0,2023/24
+cohesive-society,Average crime index score,53.2,47.8,2025
+cohesive-society,Reduction in road accidents (%),35.0,40.0,2023/24
+cohesive-society,Gender-based violence prevalence (%),38.9,,2022
+cohesive-society,"Violence against girls, physical (%)",24,,2024
+cohesive-society,"Violence against girls, sexual (%)",11,,2024
+cohesive-society,"Violence against boys, physical (%)",21,,2024
+rural,Rural Transformation Index,0.35,0.42,
+cooperatives,Industries owned by cooperatives,328,530,2023/24
+cooperatives,Cooperatives using formal markets,4279,5759,2023/24
+cooperatives,Members in cooperative societies,8358000,20540850,2023/24
+middle-class,Middle-income class population (%),12,18,2025
+environment-integrity,"Share of GDP from forest, water and marine use",4.3,7.53,2023/24
+environment-integrity,Annual deforestation rate (Ha/year),469420,234710,2023/24
+environment-integrity,"Area under plantations, forests and woodlots (Ha)",190000,253333,2023/24
+environment-integrity,Projects complying with ESIA,128,170.67,2023/24
+environment-integrity,Biodiversity loss reduced (index),30,20.0,2023/24
+environment-integrity,Ecosystems under effective conservation (%),45,,2022
+environment-integrity,"Environmental Performance Index, Africa rank",19th,Top 15,2022
+environment-integrity,"Climate Adaptation (ND-GAIN), Africa rank",18th,Top 15,2022
+environment-integrity,National land under formal land-use plans (%),15,30,2022
+environment-integrity,Wetlands under conservation (%),25,40,2023
+environment-integrity,Priority genetic resources conserved (%),30,50,2022
+urbanisation,Land surveyed (%),36,48,
+urbanisation,Regularised properties in unplanned settlements,3347275,4347275,
+urbanisation,Residential licences in unplanned settlements,25748,44010,
+urbanisation,General land under informal settlements (%),59,25,
+urbanisation,Regions with master and land-use plans (%),81,100,
+land-management,Land registered with secure tenure (%),30,,2023
+land-management,Land allocated for industrial use (%),5,,2023
+climate-resilience,Renewable energy in electricity (%),61.8,75,2025
+climate-resilience,Households using clean cooking (%),15,50,2022/23
+climate-resilience,Access to clean cooking (%),6.9,75,2024
+climate-resilience,Land degradation reduced (%),16,14,2023/24
+climate-resilience,Cost of climate impacts (% of GDP),1,0.90,2023/24
+climate-resilience,GHG emissions reduction vs 2025 baseline,209 MtCO2e,30-35% cut,2023
+early-warning,GDP for disaster risk reduction and EWS (%),<0.05-0.1,,
+early-warning,Cities with community early-warning platforms,2,,2023
+early-warning,Population with timely early-warning alerts (%),2,,2023
+carbon-trade,CO2 sequestration capacity (MtCO2/year),120,160,
+carbon-trade,Annual revenue from certified carbon credits,USD 1bn,USD 3bn,2025
+carbon-trade,Community participation in certified carbon projects (%),<5,,2025
+blue-economy,Fisheries and aquaculture share of GDP (%),1.7,3.5,2023
+blue-economy,Marine trade volume (million tons/year),21,35,2023
+blue-economy,Marine tourism revenue (TZS billion/year),800,2000,2023
+blue-economy,Territorial waters under Marine Protected Areas (%),2.6,5-6,2023
+energy,Installed electricity capacity (MW),4504.5,8000,2025
+energy,Per capita electricity consumption (kWh),170,600,2025
+energy,Electricity connectivity (%),52.1,75,2025
+energy,Electricity system losses (%),14.2,12.4,2025
+energy,Households using clean cooking energy (%),30,66,2022
+energy,Household electricity reliability (%),<50-60,,
+logistics,Transport share of GDP (%),7.5,7.7,
+logistics,Transport GDP real growth (%),4.2,8.6,
+science-tech,Global Innovation Index rank,120/133,50th,2024
+science-tech,R&D expenditure (% of GDP),0.58,>0.8,2023
+rnd,Government policies informed by local research (%),<30,100,2024
+data-ecosystem,Statistical Performance Indicator rank,103/186,50th,2023/24
+data-ecosystem,Open Data Index rank,96/198,42nd,2024/25
+digital-transformation,ICT share of GDP (%),7.6,10,2023
+digital-transformation,Smartphone penetration (%),37,>70,2025
+digital-transformation,Major cyber-attacks (incidents),1200,<250,
+digital-transformation,Global Innovation Index rank,120/133,60th,2024
+digital-transformation,"Sectors using AI, IoT and blockchain (%)",<15,,
+ict-infrastructure,Broadband internet use (%),40,>70,2025
+ict-infrastructure,National digital literacy (%),30,>60,2024
+ict-infrastructure,Internet penetration (%),79.3,98,2025
+ict-infrastructure,"Global Cybersecurity Index, Africa rank",5th,3rd,
+ict-infrastructure,Rural population with internet access (%),<25,,2024
+ict-infrastructure,Cost of 1GB mobile data (% of income),3.5,,2024
+communication,Population covered by 4G (%),90,98,2024
+communication,Population covered by 5G (%),26,70,2024
+communication,Population with postal access within 5km (%),75,,2023
+communication,E-commerce transactions (% of GDP),1.5,,2022
+communication,National Digital Competitiveness Index (0-100),32,,2023
+business-environment,Regulatory quality index (-2.5 to +2.5),-0.59,1.0,2023
+good-governance,Political stability index,-0.05,0.10,2023
+good-governance,Government effectiveness index,-0.46,-0.30,2023
+good-governance,"Corruption Perception Index, EAC rank",2nd least corrupt,1st,2024
+good-governance,Rule of Law Index rank (lower middle-income),15/37,Top 10,2024
+local-governance,Services digitised at LGA level (%),25,,2024
+local-governance,Citizen satisfaction with LGAs (%),40,,2024
+local-governance,LGAs with clean audit opinions (%),<40,,2024
+digital-governance,Core government services online (%),45,95,2025
+digital-governance,Rural population with functional digital ID (%),25,75,2025
+digital-governance,Urban population with functional digital ID (%),40,90,2025
+digital-governance,Sectors using interoperable data systems (%),20,90,2025
+digital-governance,MDAs and LGAs with interoperable ICT (%),20,40,2024
+mindset-change,Social Progress Index score,57.74,65+,

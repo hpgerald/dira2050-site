@@ -1,0 +1,8 @@
+id,name,role,source_page,basis
+cabinet,Cabinet,"Sets strategic direction, focusing national attention on the highest-impact priorities.",8,Documented
+npc,National Planning Commission (NPC),"The central authority: coordinates delivery, tracks progress and tests whether reforms are working.",26,Documented
+edelivery,e-Delivery,The digital results-management platform and dashboards that consolidate and present performance across all institutions.,25,Documented
+pmoralg,Ministry for Regional Administration and Local Government,Ensures consistency between local government implementation and national priorities; submits consolidated sub-national data to e-Delivery.,27,Documented
+mdas,"Sector Ministries, Departments and Agencies (MDAs)",Own sector policy and implementation; submit validated sector performance data to e-Delivery.,27,Documented
+rs,Regional Secretariats (RSs),Coordinate and validate sub-national data across their regions.,27,Documented
+lgas,Local Government Authorities (LGAs),Deliver at the local level and submit performance data to Regional Secretariats and e-Delivery dashboards.,28,Documented

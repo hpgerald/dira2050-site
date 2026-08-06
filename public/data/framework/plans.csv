@@ -1,0 +1,8 @@
+id,name,kind,start,end,current,note,source_page
+vision,Vision 2050 launched,point,2025,2025,0,"The overarching goals, launched 17 July 2025.",8
+ltpp,Long Term Perspective Plan,span,2026,2051,0,"2026/27 to 2050/51, phasing the Vision.",8
+fydp4,FYDP IV,block,2026,2031,1,2026/27–2030/31 · the first implementation phase.,8
+fydp5,FYDP V,block,2031,2036,0,2031/32–2035/36,8
+fydp6,FYDP VI,block,2036,2041,0,2036/37–2040/41,8
+fydp7,FYDP VII,block,2041,2046,0,2041/42–2045/46,8
+fydp8,FYDP VIII,block,2046,2051,0,2046/47–2050/51,8

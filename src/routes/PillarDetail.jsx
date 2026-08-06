@@ -23,7 +23,7 @@ export default function PillarDetail() {
 
   return (
     <article className="container section stack">
-      <p className="eyebrow"><Link to="/pillars">{t('pillar.crumb')}</Link> · {t('pillar.word')} {idx + 1} {t('pillar.of')} {all.length}</p>
+      <p className="eyebrow"><Link to="/dira/pillars">{t('pillar.crumb')}</Link> · {t('pillar.word')} {idx + 1} {t('pillar.of')} {all.length}</p>
       <div className="cols">
         <div className="cols__label">{t('pillar.word')} {String(idx + 1).padStart(2, '0')}</div>
         <div>
@@ -42,8 +42,8 @@ export default function PillarDetail() {
       <hr className="rule" />
 
       <nav className="pager">
-        {prev ? <Link className="pager__link" to={`/pillars/${prev.id}`}>← {prev.short_name}</Link> : <span />}
-        {next ? <Link className="pager__link pager__link--next" to={`/pillars/${next.id}`}>{next.short_name} →</Link> : <span />}
+        {prev ? <Link className="pager__link" to={`/dira/pillars/${prev.id}`}>← {prev.short_name}</Link> : <span />}
+        {next ? <Link className="pager__link pager__link--next" to={`/dira/pillars/${next.id}`}>{next.short_name} →</Link> : <span />}
       </nav>
     </article>
   )

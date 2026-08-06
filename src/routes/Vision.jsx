@@ -6,6 +6,8 @@ export default function Vision() {
   const { t } = useLang()
   usePageTitle(t('vision.label'), t('vision.lead'))
   const goals = t('vision.goals')
+  const principles = t('vision.principles')
+  const delivery = t('vision.delivery')
 
   return (
     <div className="container section stack">
@@ -40,13 +42,47 @@ export default function Vision() {
       <hr className="rule" />
 
       <section className="cols">
+        <div className="cols__label">{t('vision.principlesLabel')}</div>
+        <div>
+          <p className="measure">{t('vision.principlesIntro')}</p>
+          <ol className="goals">
+            {principles.map(([title, desc], i) => (
+              <li key={i} className="goal">
+                <span className="goal__num">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 className="goal__title">{title}</h3>
+                  <p className="goal__desc">{desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <hr className="rule" />
+
+      <section className="cols">
         <div className="cols__label">{t('vision.howLabel')}</div>
         <div className="stack">
           <p className="measure">{t('vision.howBody')}</p>
           <p>
-            <Link className="btn" to="/pillars">{t('vision.btnFramework')}</Link>{' '}
-            <Link className="btn btn--ghost" to="/targets">{t('vision.btnTargets')}</Link>
+            <Link className="btn" to="/dira/pillars">{t('vision.btnFramework')}</Link>{' '}
+            <Link className="btn btn--ghost" to="/dira/targets">{t('vision.btnTargets')}</Link>
           </p>
+        </div>
+      </section>
+
+      <hr className="rule" />
+
+      <section className="cols">
+        <div className="cols__label">{t('vision.deliveryLabel')}</div>
+        <div>
+          <p className="measure">{t('vision.deliveryIntro')}</p>
+          <ul className="deflist">
+            {delivery.map(([title, desc], i) => (
+              <li key={i}><strong>{title}.</strong> {desc}</li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>
