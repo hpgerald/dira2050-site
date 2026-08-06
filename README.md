@@ -1,65 +1,81 @@
-# Dira 2050 Explained — project
+# Tanzania Vision 2050 Explained
 
-A static React + Vite site that makes the Tanzania Development Vision 2050 understandable to the general public. Built incrementally per `MASTER_PROMPT_Dira2050_Site.md`.
+A plain-language, data-driven web platform that makes Tanzania's national plan understandable to the general public. It brings together the country's core planning documents, explains them in accessible language, and visualises their goals, targets, sectors and financing — with every figure traceable to its source page.
 
-## Status
-- **Phase 1 — Data extraction: DONE.** Full 76-page PDF parsed. 12 datasets in `public/data/`. Caveats in `public/data/DATA_NOTES.md`.
-- **Phase 2 — Scaffold + data layer: DONE.** Vite + React + Router app boots; `src/lib/data.js` loads all CSVs; `/#/debug` shows live row counts. Verified passing.
-- **Phase 3 — Design system: DONE.** Editorial system inspired by the Pentagram design agency — **monochrome (black / white / grey only)**, neo-grotesque type, strict grid, thin rules, hover-invert. `src/design/tokens.css` + `components.css`; components: `DriverIndex` (numbered hub, in `Pentagram.jsx`), `StatCard`, `Nav`, `Footer`, `StarMark` (square bullet); `/#/design` preview page. Build verified: 46 modules, CSS 8.3 kB, JS ~64 kB gzipped.
-- **Phase 4 — Home page: DONE.** Type-led hero ("The Tanzania we want by 2050"), three headline 2050 figures pulled from `targets.csv`, the three Pillars and five Drivers as numbered indexes (keyboard/screen-reader navigable, linking to `/pillars/:id` and `/enablers/:id`), and a closing CTA. Responsive to 360px. `Home.jsx` is now `/`; design system moved to `/design`. Build verified: exit 0.
-- **Phase 5 — Pillars & Drivers pages: DONE.** `/pillars` framework index (foundation + 3 pillars + 5 drivers), `/pillars/:id` (3 pages: summary + its targets), `/enablers/:id` (5 pages: summary + targets + numbered aspirations), all data-driven with prev/next paging and a shared `TargetList` component. Added `NotFound`. Build verified: exit 0.
-- **Phase 6 — Targets dashboard: DONE.** `/targets`: every target as a card with an Information-is-Beautiful "now → 2050" proportional bar comparison (monochrome — grey baseline, black target), a change tag (Grow ×N / Reduce / Eliminate), plain-language line and source page. Filter by All / Economy / People / Environment / Drivers with live counts. All numbers in text (bars aria-hidden) for screen-reader completeness. Build verified: exit 0.
-- **Phase 7 — Timeline + For You: DONE.** `/timeline` (milestone scroller from `milestones.csv`, editorial vertical layout 2000→2050) and `/what-it-means` (six everyday-life sections translating targets into personal impact, with inline `GlossaryTerm` tooltips from `glossary.csv` — hover / keyboard-focus / tap accessible). Build verified: exit 0.
-- **Phase 8 — Data, About, polish: DONE.** `/vision` (four goals + framework), `/data` (downloadable CSVs + methodology + source PDF link), `/about` (aspirations-not-achievements disclaimer + citation). Polish: SVG favicon, meta + Open Graph tags, per-route page titles, skip-to-content link, scroll-to-top on navigation, proper 404. Verified: production build serves all routes, 12 datasets and favicon at HTTP 200. See `DEPLOY.md`.
+**Live site:** https://hpgerald.github.io/dira2050-site/
 
-## PRO edition (additive, 15-phase build — see PRO_PLAN.md)
-- **PRO Phase 1 — Foundation & framework: DONE.** New `PRO` nav item after DATA; `/pro/*` mounted via a lazy-loaded, code-split `ProApp` (framer-motion stays out of the base bundle — base ~82 kB gz unchanged). Scoped editorial palette in `src/design/pro.css` (`.pro`), a bilingual `pro.*` string namespace, and a reusable primitive library (`src/pro/components/primitives.jsx`: Reveal, ProSection, BigStat, ProCard, Quote, Comparison, Callout, InfoPanel, Expandable, ProTimeline). Landing at `/pro` showcases them, pulling real figures from the data. English + Kiswahili. No regressions (all base routes 200).
-- **PRO Phase 2 — Executive Story: DONE.** `/pro` is now a cinematic scroll narrative: hero + scroll cue → full-bleed vision statement → journey timeline (from `milestones`) → now-to-2050 transformation comparisons (from `targets`) → key numbers → three flag-coloured pillar cards (linking to `/pillars/:id`) → national ambitions → call to explore. Added `ScrollProgress` (flag-green) and `Statement` primitives; framer-motion reveals throughout. Palette dialled to Tanzania flag used sparingly (green accent; gold/blue for pillar identity only), Pentagram-restrained. Bilingual. Build clean, no regressions.
-- **PRO Phase 3 — Vision Explorer: DONE.** `/pro/explore`: a unified, searchable, faceted index of ~54 entities (goals, targets, pillars, drivers, sectors, foundation, principles, themes) built from existing data plus authored principle/theme sets. Live search + facet filters with counts; every card shows its **connections** to other entities (target→pillar/driver, driver→targets, etc.) and links to its canonical page. Added a PRO sub-nav (Story / Explore). Bilingual, no regressions.
-- **PRO Phase 4 — Storytelling engine: DONE.** Reusable `StoryTemplate` (header + ordered scroll-revealed blocks) plus a builder that assembles a full story for any pillar or driver from the data: why it matters (authored), what it aims for by 2050 (reuses `TargetList`), aspirations, the journey timeline, and connections to siblings. Route `/pro/story/:kind/:id`, linked from the Explorer and the Executive Story pillar cards, with a link back to each canonical page. Bilingual, no regressions.
-- **PRO Phase 5 — Knowledge Graph: DONE.** `/pro/graph`: a reusable `ForceGraph` (d3-force, synchronous settled layout — deterministic, no animation loop) connecting Dira 2050 → pillars → drivers → sectors, built from data plus authored driver-sector edges. Nodes are keyboard-focusable and navigate to stories; hover highlights neighbours; flag-restrained colours; an accessible `<details>` node-list fallback for screen readers. d3-force lives only in the lazy PRO chunk. Sub-nav now Story / Explore / Graph. Bilingual, no regressions.
-- **PRO Phase 6 — Opportunity Intelligence: DONE.** `/pro/opportunities`: `intel_opportunities` extended with bilingual `timeline` + `impact`; filter by opportunity type and priority timeline; cards show description, stakeholders, potential impact, priority and an evidence link, tagged Documented/Inferred. Sub-nav is now scrollable (Story / Explore / Graph / Opportunities).
-- **PRO Phase 7 — Skills Intelligence: DONE.** `/pro/skills`: `intel_skills` extended with bilingual `learning_path`, `certifications`, `programs`, `outlook`; filter by area and demand; cards show why it matters, learning path, career outlook, place in the strategy (with Documented/Inferred), plus certification and university-program chips.
-- **PRO Phase 8 — Audience Intelligence: DONE.** `/pro/for` index + `/pro/for/:id` tailored pages for all 12 audiences from `intel_audiences`, each showing why it matters, opportunities, actions to consider, skills, sectors to watch and institutions to engage, cross-linked to sibling audiences and into the Skills/Opportunities modules. Reuses the `StoryTemplate` engine. Sub-nav now Story/Explore/Graph/Opportunities/Skills/Audiences.
-- **PRO palette locked (all phases):** white, black, **dark green `#166534`** (AAA on light surfaces) and grey; a brighter `#34c759` is used only for accent text on dark sections. No gold/blue.
-- **PRO Phase 9 — Regional Intelligence: DONE.** `/pro/regions`: authored bilingual `regions` dataset (8 zones, tagged Documented/Inferred) + an interactive schematic zone map with clickable/keyboard markers and a per-zone profile (priorities, industries, resources, opportunities), with an honest "illustrative, not region-by-region" disclaimer.
-- **PRO Phase 10 — Sector Intelligence: DONE.** `/pro/sectors` index + `/pro/sectors/:id` mini-portals from `sectors` + `sector_kpis`: current contribution, the 2050 ambition, key figures, mapped opportunities and links to other sectors. Explorer and Knowledge Graph sector nodes now route into these portals. Palette locked to white/black/dark-green/grey across all PRO phases.
-- **PRO Phase 11 — Advanced Data Storytelling: DONE.** `/pro/charts`: a treemap of GDP composition (d3-hierarchy), a Sankey flow of drivers→sectors (d3-sankey), and small multiples of every target's now→2050 leap (hand-rolled SVG). Each answers a specific question; all in the green palette; d3 modules live only in the lazy PRO chunk. Reusable chart library in `pro/components/charts.jsx`.
-- **PRO Phase 12 — Evidence Layer: DONE.** `/pro/evidence`: by-the-numbers (datasets / targets / sections), the Documented-vs-Inferred method with the Basis legend, a section→page map of the document from `sources.csv`, and links to the source PDF and data downloads. Plus a reusable `Evidence` provenance chip for use across modules.
-- **PRO Phase 13 — AI Knowledge Assistant: DONE.** `/pro/ask`: a fully client-side, private retrieval assistant (`pro/lib/assistant.js`) that indexes every dataset and ranks records by term overlap — no external calls, no keys. Chat-style Q&A with suggested questions, cited result cards (type + Documented/Inferred + deep link), and a privacy note. The `assistant` object is a swap-in adapter so a real LLM backend can replace `answer()` later without UI changes.
-- **PRO Phase 14 — Progress Monitoring Architecture: DONE.** `/pro/progress`: baseline→current→2050 progress tracks for every measurable target with status pills, driven by a swappable `progressProvider` adapter (`pro/lib/progress.js`) + direction-aware `pct`/`statusKey` helpers. Default provider returns no live data, so the UI shows a clean "monitoring pending" state; an official-indicators API implements the same `fetch(ids)` contract later with zero UI changes.
-- **PRO Phase 15 — Performance, Accessibility & Production Hardening: DONE.** Final sweep across the PRO edition: every module page now renders a single semantic `<h1>` (via `ProSection h1`), a bilingual React error boundary (`pro/components/ErrorBoundary.jsx`) wraps all PRO routes and recovers on navigation, `<MotionConfig reducedMotion="user">` honours the OS reduce-motion setting for all framer-motion animation, PRO routes added to `sitemap.xml` for SEO, and a translation-parity audit confirmed 388 keys in each language with zero gaps. Verified: production build exit 0 (base 88 kB gz, PRO chunk lazy-loaded at 60.7 kB gz — code-split intact), all 17 routes (base + PRO) return 200, both languages present in the bundle. PRO edition complete.
+## What's inside
 
----
+The landing page is a hub linking the planning documents. Three are fully built:
 
-**The base site is complete — all 8 phases done.**
+- **Vision 2050 (Dira 2050)** — `/dira`. The 25-year national vision: its four goals, five guiding principles, the three pillars and five drivers, the 2050 targets dashboard, a timeline, "what it means for you" with an Opportunities & Strategic Intelligence layer (opportunities, sector outlook, opportunity map, skills in demand, strategic briefing), the delivery approach, downloadable data, and a knowledge-check quiz. **Bilingual — English and Swahili.**
+- **National Delivery Framework** — `/framework`. How delivery is governed: the delivery cycle, priority areas, the delivery system, and a knowledge check. English.
+- **Fourth Five-Year Development Plan (FYDP IV) 2026/27–2030/31** — `/fydp`. The first five years of the Vision: the macro economy and reforms, all 48 strategic pathways (each with its own target tables), financing (sources, allocation, innovative instruments, private capital and public corporations), the seven flagship programmes, risks, and a knowledge check. English.
 
-### Post-launch additions
-- **SEO.** Switched to real crawlable URLs (`BrowserRouter` + GitHub Pages `404.html` redirect), `base:'/dira2050-site/'`; added canonical, rich meta, Open Graph + Twitter cards, JSON-LD (WebSite/creator), per-route titles + descriptions, `robots.txt`, `sitemap.xml`, and a generated `og.png` social image.
-- **Opportunities & Strategic Intelligence layer** (deep dive at the bottom of `/what-it-means`). Analytical "second heart": audience-specific intelligence (12 roles), sector-attention outlook, opportunity map, skills-in-demand, and a strategic briefing (priorities/dependencies/gaps/bottlenecks/leverage/risks). Driven by five `intel_*.csv` datasets; every item tagged **Documented** vs **Inferred**.
-- **Founder section** on `/about` — the Information Visualization Institute vision, Gerald Tesha bio, and contact details.
-- **Bilingual (English + Swahili).** Top-right EN/SW toggle; English is the default, choice persists in localStorage. UI strings live in `src/strings.js` (en/sw); Swahili datasets in `public/data/sw/` mirror the English ones (English at `public/data/`), extracted from the official Swahili document (DIRA YA TAIFA YA MAENDELEO 2050) using government terminology. IDs are identical across languages so routing and cross-references are unchanged; enum values (category/type/basis/demand/signal) stay English in the CSVs and are translated for display. `src/i18n.jsx` holds the language context; `useData()` loads the matching data folder.
+The Long-Term Perspective Plan (LTPP) and the Communication Strategy are placeholders pending build-out.
 
-## Design (locked)
-Editorial / **Pentagram-agency** aesthetic: monochrome — black, white and grey ONLY, no accent colours. Meaning comes from typography, scale and layout. The five Drivers are the navigation hub, presented as a large numbered index that inverts to black on hover/focus (not a star or pentagon). React + Vite static · English · general-public audience. Type: Inter (neo-grotesque), large and tightly tracked.
+## Data and the honesty model
 
-## Run it
+All content is built from the official documents. Datasets live as plain CSVs and are downloadable from the Data page, each figure carrying the source page it came from:
+
+- `public/data/*.csv` — Vision 2050 datasets (English); `public/data/sw/*.csv` — the Swahili mirror, extracted from the official *Dira ya Taifa ya Maendeleo 2050*.
+- `public/data/framework/*.csv` — National Delivery Framework.
+- `public/data/fydp/*.csv` — FYDP IV (pathways, KPIs, financing, flagships, risks).
+
+The Opportunities & Strategic Intelligence layer distinguishes what the document **states** from **inferred** analysis: every item is tagged **Documented** or **Inferred**, shown with a small provenance chip.
+
+## Tech
+
+React 18 + Vite 5, single-page app with `react-router-dom` (`BrowserRouter`, basename `/dira2050-site`). No UI framework — a hand-built, monochrome editorial design system in `src/design/tokens.css` + `components.css` (black / white / grey only; meaning comes from typography, scale and layout). CSVs are parsed with PapaParse and cached per language. Static output, hosted on GitHub Pages. A `public/404.html` redirect restores deep links on hard refresh.
+
+## Local development
+
 ```
 npm install
-npm run dev      # open the printed localhost URL
-npm run build    # static output in dist/
+npm run dev        # open the printed localhost URL
+npm run build      # static output in dist/
+npm run preview    # serve the production build locally
 ```
-Key routes while building: `/#/design` (design system), `/#/debug` (data check).
-Note: any `dist/` in the folder may be a stale earlier build — always regenerate with `npm run build`.
 
-## Architecture
-- `public/data/*.csv` — single source of truth (Phase 1).
-- `src/design/` — `tokens.css` (CSS variables) + `components.css`.
-- `src/components/` — `Pentagram.jsx`, `StarMark.jsx`, `StatCard.jsx`, `Nav.jsx`, `Footer.jsx`.
-- `src/lib/data.js` — CSV loader (papaparse), cached, typed accessors (`getPillars`, `getEnablers`, `targetsForPillar`, `aspirationsForEnabler`, …).
-- `src/lib/format.js` — number/unit formatting.
-- `src/useData.js` — hook exposing `{ data, loading, error }`.
-- `src/routes/` — `DesignSystem.jsx`, `Debug.jsx` (content pages arrive Phase 4+).
+Check English/Swahili string parity for the bilingual sections:
 
-## Next
-Phase 4 — the pentagram hub as live navigation on the Home page: hero, the star wired to `/enablers/:id`, three headline stats, and a "start here" flow.
+```
+node parity.mjs    # reports any keys missing in either language
+```
+
+## Deployment (GitHub Pages)
+
+Deployment is automated via GitHub Actions (`.github/workflows/deploy.yml`): every push to `main` builds the site and publishes it to Pages. In the repo, set **Settings → Pages → Source → "GitHub Actions"** once.
+
+```
+git add -A
+git commit -m "Update"
+git push            # the workflow builds and deploys automatically
+```
+
+A `gh-pages` script (`npm run deploy`) remains as a manual fallback, but the Actions workflow is the primary path. A `public/.nojekyll` marker keeps Pages from running the files through Jekyll.
+
+## Project structure
+
+```
+public/
+  data/            Vision 2050 CSVs (en) + data/sw (Swahili) + data/framework + data/fydp
+  404.html         SPA deep-link redirect for GitHub Pages
+  .nojekyll        disables Jekyll on Pages
+src/
+  App.jsx          platform router (hub, /dira, /framework, /fydp, coming-soon)
+  DiraApp.jsx      the bilingual Vision 2050 site
+  framework/       National Delivery Framework section
+  fydp/            FYDP IV section
+  routes/          Vision 2050 pages
+  components/      shared components (Nav, Footer, Quiz, StatCard, …)
+  design/          tokens.css + components.css (the monochrome system)
+  i18n.jsx         language context (English / Swahili)
+  strings.js       UI strings (en / sw)
+  lib/data.js      CSV loader and typed accessors
+index.html         head, SEO meta, structured data, SPA restore script
+```
+
+## Attribution
+
+Created by Gerald Tesha. Built entirely from the official published documents of the United Republic of Tanzania (National Planning Commission). This is an independent explainer, not an official government product; the targets shown are the plan's aspirations, not achievements.

@@ -23,7 +23,6 @@ const FILES = {
   intelSkills: 'intel_skills.csv',
   intelSectors: 'intel_sectors_outlook.csv',
   intelStrategic: 'intel_strategic.csv',
-  regions: 'regions.csv',
 }
 
 // Split a pipe-delimited cell into a clean array.
