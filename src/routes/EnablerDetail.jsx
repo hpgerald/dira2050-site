@@ -4,6 +4,7 @@ import { getEnablers, getEnabler, targetsForEnabler, aspirationsForEnabler } fro
 import TargetList from '../components/TargetList.jsx'
 import NotFound from './NotFound.jsx'
 import { usePageTitle } from '../usePageTitle.js'
+import Reveal from '../components/Reveal.jsx'
 import { useLang } from '../i18n.jsx'
 
 export default function EnablerDetail() {
@@ -38,15 +39,15 @@ export default function EnablerDetail() {
 
       {targets.length > 0 && (
         <>
-          <section className="cols">
+          <Reveal as="section" className="cols">
             <div className="cols__label">{t('driver.targets')}</div>
             <div><TargetList targets={targets} /></div>
-          </section>
+          </Reveal>
           <hr className="rule" />
         </>
       )}
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('driver.aspirations')}</div>
         <div>
           <p className="measure">{t('driver.aspirationsIntro')}</p>
@@ -56,7 +57,7 @@ export default function EnablerDetail() {
             ))}
           </ol>
         </div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 

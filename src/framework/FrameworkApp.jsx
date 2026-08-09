@@ -5,6 +5,7 @@ import FrameworkHome from './FrameworkHome.jsx'
 import FrameworkCycle from './FrameworkCycle.jsx'
 import FrameworkPriorityAreas from './FrameworkPriorityAreas.jsx'
 import FrameworkSystem from './FrameworkSystem.jsx'
+import FrameworkData from './FrameworkData.jsx'
 import FrameworkQuiz from './FrameworkQuiz.jsx'
 
 /*
@@ -13,7 +14,7 @@ import FrameworkQuiz from './FrameworkQuiz.jsx'
 */
 function FrameworkHeader() {
   return (
-    <header className="nav">
+    <header className="nav nav--section">
       <div className="nav__inner">
         <Link to="/framework" className="nav__brand">
           National Delivery Framework <span className="nav__brand-sub">Explained</span>
@@ -40,6 +41,7 @@ export default function FrameworkApp() {
           <Route path="cycle" element={<FrameworkCycle />} />
           <Route path="priority-areas" element={<FrameworkPriorityAreas />} />
           <Route path="system" element={<FrameworkSystem />} />
+          <Route path="data" element={<FrameworkData />} />
           <Route path="quiz" element={<FrameworkQuiz />} />
           <Route path="*" element={<FrameworkHome />} />
         </Routes>

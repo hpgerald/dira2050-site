@@ -3,6 +3,7 @@ import { useData } from '../useData.js'
 import { getPillars, getEnablers } from '../lib/data.js'
 import DriverIndex from '../components/Pentagram.jsx'
 import StatCard from '../components/StatCard.jsx'
+import Reveal from '../components/Reveal.jsx'
 import { usePageTitle } from '../usePageTitle.js'
 import { useLang } from '../i18n.jsx'
 
@@ -21,17 +22,17 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container">
-          <span className="eyebrow">{t('home.eyebrow')}</span>
-          <h1 className="hero__title">{t('home.titleA')}<br />{t('home.titleB')}</h1>
-          <p className="hero__lead">{t('home.lead')}</p>
-          <ul className="hero__facts">
+          <Reveal as="span" className="eyebrow">{t('home.eyebrow')}</Reveal>
+          <Reveal as="h1" className="hero__title" delay={80}>{t('home.titleA')}<br />{t('home.titleB')}</Reveal>
+          <Reveal as="p" className="hero__lead" delay={160}>{t('home.lead')}</Reveal>
+          <Reveal as="ul" className="hero__facts" delay={220}>
             {t('home.facts').map((f) => <li key={f} className="hero__fact">{f}</li>)}
-          </ul>
-          <p className="hero__leadsub">{t('home.leadSub')}</p>
-          <p className="hero__cta">
+          </Reveal>
+          <Reveal as="p" className="hero__leadsub" delay={280}>{t('home.leadSub')}</Reveal>
+          <Reveal as="p" className="hero__cta" delay={340}>
             <Link className="btn" to="/dira/vision">{t('home.ctaStart')}</Link>
             <Link className="btn btn--ghost" to="/dira/targets">{t('home.ctaTargets')}</Link>
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -42,7 +43,7 @@ export default function Home() {
 
       {!loading && !error && (
         <>
-          <section className="container section cols">
+          <Reveal as="section" className="container section cols">
             <div className="cols__label">{t('home.goalLabel')}</div>
             <div className="grid-stats">
               {headline(data).map((tg) => (
@@ -50,37 +51,37 @@ export default function Home() {
                   baseline={tg.baseline_value} baselineYear={tg.baseline_year} targetYear={tg.target_year} />
               ))}
             </div>
-          </section>
+          </Reveal>
 
           <hr className="rule" />
 
-          <section className="container section cols">
+          <Reveal as="section" className="container section cols">
             <div className="cols__label">{t('home.pillarsLabel')}</div>
             <div>
               <p className="measure">{t('home.pillarsIntro')}</p>
               <DriverIndex items={getPillars(data)} basePath="/dira/pillars" ariaLabel={t('home.pillarsLabel')} />
             </div>
-          </section>
+          </Reveal>
 
           <hr className="rule" />
 
-          <section className="container section cols">
+          <Reveal as="section" className="container section cols">
             <div className="cols__label">{t('home.driversLabel')}</div>
             <div>
               <p className="measure">{t('home.driversIntro')}</p>
               <DriverIndex items={getEnablers(data)} basePath="/dira/enablers" ariaLabel={t('home.driversLabel')} />
             </div>
-          </section>
+          </Reveal>
 
           <hr className="rule rule--strong" />
 
-          <section className="container section">
+          <Reveal as="section" className="container section">
             <div className="closing">
               <h2>{t('home.closingH2')}</h2>
               <p className="measure">{t('home.closingP')}</p>
               <p><Link className="btn" to="/dira/what-it-means">{t('home.closingCta')}</Link></p>
             </div>
-          </section>
+          </Reveal>
         </>
       )}
     </>

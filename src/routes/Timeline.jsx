@@ -1,4 +1,5 @@
 import { useData } from '../useData.js'
+import Reveal from '../components/Reveal.jsx'
 import { usePageTitle } from '../usePageTitle.js'
 import { useLang } from '../i18n.jsx'
 
@@ -24,8 +25,8 @@ export default function Timeline() {
       <hr className="rule rule--strong" />
 
       <ol className="timeline">
-        {items.map((m) => (
-          <li key={`${m.year}-${m.title}`} className="tline">
+        {items.map((m, i) => (
+          <Reveal as="li" key={`${m.year}-${m.title}`} className="tline" delay={(i % 4) * 40}>
             <div className="tline__year">{m.year}</div>
             <div className="tline__body">
               <span className="tline__phase">{m.phase}</span>
@@ -33,7 +34,7 @@ export default function Timeline() {
               <p className="tline__desc">{m.description}</p>
               {m.source_page && <p className="tline__src">{t('common.sourceCite')}{m.source_page}</p>}
             </div>
-          </li>
+          </Reveal>
         ))}
       </ol>
     </div>

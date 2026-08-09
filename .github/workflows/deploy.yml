@@ -52,3 +52,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # GitHub Pages can sit in "deployment_queued" for a while; the action
+          # defaults to a 10-min poll timeout and then reports failure even
+          # though Pages finishes publishing afterwards. Wait up to 25 min so a
+          # slow-but-successful deploy is reported green instead of red.
+          timeout: 1500000
+          error_count: 20

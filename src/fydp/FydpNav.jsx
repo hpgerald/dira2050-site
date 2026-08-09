@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import SubNav from '../components/SubNav.jsx'
 
 const LINKS = [
   ['/fydp', 'Overview', true],
@@ -7,23 +7,9 @@ const LINKS = [
   ['/fydp/financing', 'Financing', false],
   ['/fydp/flagships', 'Flagships', false],
   ['/fydp/risks', 'Risks', false],
+  ['/fydp/data', 'Data', false],
 ]
 
 export default function FydpNav() {
-  return (
-    <nav className="subnav" aria-label="FYDP IV sections">
-      <div className="container subnav__inner">
-        {LINKS.map(([to, label, end]) => (
-          <NavLink key={to} to={to} end={end}
-            className={({ isActive }) => `subnav__link ${isActive ? 'is-active' : ''}`}>
-            {label}
-          </NavLink>
-        ))}
-        <NavLink to="/fydp/quiz"
-          className={({ isActive }) => `subnav__link subnav__link--quiz ${isActive ? 'is-active' : ''}`}>
-          Knowledge check
-        </NavLink>
-      </div>
-    </nav>
-  )
+  return <SubNav label="FYDP IV sections" links={LINKS} quiz={['/fydp/quiz', 'Knowledge check']} />
 }

@@ -4,6 +4,7 @@ import { getPillars, getPillar, targetsForPillar } from '../lib/data.js'
 import TargetList from '../components/TargetList.jsx'
 import NotFound from './NotFound.jsx'
 import { usePageTitle } from '../usePageTitle.js'
+import Reveal from '../components/Reveal.jsx'
 import { useLang } from '../i18n.jsx'
 
 export default function PillarDetail() {
@@ -34,10 +35,10 @@ export default function PillarDetail() {
 
       <hr className="rule rule--strong" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('pillar.aims')}</div>
         <div><TargetList targets={targetsForPillar(data, id)} /></div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 

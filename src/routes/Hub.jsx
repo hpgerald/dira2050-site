@@ -10,7 +10,7 @@ import { usePageTitle } from '../usePageTitle.js'
 */
 const PLANS = [
   { key: 'dira', to: '/dira', live: true },
-  { key: 'ltpp', to: '/ltpp', live: false },
+  { key: 'ltpp', to: '/ltpp', live: true },
   { key: 'fydp', to: '/fydp', live: true },
   { key: 'framework', to: '/framework', live: true },
 ]
@@ -35,9 +35,12 @@ export default function Hub() {
     <div className="hub">
       <header className="hub__bar">
         <span className="hub__brand">Dira 2050 <span className="hub__brand-sub">· Platform</span></span>
-        <div className="langtoggle" role="group" aria-label={t('nav.langLabel')}>
-          <button type="button" aria-pressed={lang === 'en'} className={`langtoggle__btn ${lang === 'en' ? 'is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
-          <button type="button" aria-pressed={lang === 'sw'} className={`langtoggle__btn ${lang === 'sw' ? 'is-active' : ''}`} onClick={() => setLang('sw')}>SW</button>
+        <div className="nav__right">
+          <Link to="/about" className="nav__hub">{t('about.label')}</Link>
+          <div className="langtoggle" role="group" aria-label={t('nav.langLabel')}>
+            <button type="button" aria-pressed={lang === 'en'} className={`langtoggle__btn ${lang === 'en' ? 'is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
+            <button type="button" aria-pressed={lang === 'sw'} className={`langtoggle__btn ${lang === 'sw' ? 'is-active' : ''}`} onClick={() => setLang('sw')}>SW</button>
+          </div>
         </div>
       </header>
 

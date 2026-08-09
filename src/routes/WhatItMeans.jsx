@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useData } from '../useData.js'
 import GlossaryTerm from '../components/GlossaryTerm.jsx'
 import Basis from '../components/Basis.jsx'
+import Reveal from '../components/Reveal.jsx'
 import { usePageTitle } from '../usePageTitle.js'
 import { useLang } from '../i18n.jsx'
 
@@ -29,7 +30,7 @@ export default function WhatItMeans() {
 
       {sections.map((sec, i) => (
         <div key={i}>
-          <section className="fy">
+          <Reveal as="section" className="fy">
             <div className="fy__num">{String(i + 1).padStart(2, '0')}</div>
             <div className="fy__body">
               <h2>{sec.h2}</h2>
@@ -41,14 +42,14 @@ export default function WhatItMeans() {
                 )}
               </p>
             </div>
-          </section>
+          </Reveal>
           {i < sections.length - 1 && <hr className="rule" />}
         </div>
       ))}
 
       <hr className="rule rule--strong" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('si.deepDive')}</div>
         <div>
           <span className="eyebrow">{t('si.eyebrow')}</span>
@@ -59,9 +60,9 @@ export default function WhatItMeans() {
             <Basis value="Inferred" /> {t('si.legendInf')}
           </p>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('si.exploreLabel')}</div>
         <div>
           <ul className="index">
@@ -79,7 +80,7 @@ export default function WhatItMeans() {
             ))}
           </ul>
         </div>
-      </section>
+      </Reveal>
     </div>
   )
 }

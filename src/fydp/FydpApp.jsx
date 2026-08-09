@@ -12,6 +12,7 @@ import FydpFinPublic from './FydpFinPublic.jsx'
 import FydpFlagships from './FydpFlagships.jsx'
 import FydpFlagship from './FydpFlagship.jsx'
 import FydpRisks from './FydpRisks.jsx'
+import FydpData from './FydpData.jsx'
 import FydpQuiz from './FydpQuiz.jsx'
 
 /*
@@ -20,7 +21,7 @@ import FydpQuiz from './FydpQuiz.jsx'
 */
 function FydpHeader() {
   return (
-    <header className="nav">
+    <header className="nav nav--section">
       <div className="nav__inner">
         <Link to="/fydp" className="nav__brand">
           FYDP IV <span className="nav__brand-sub">Explained</span>
@@ -55,6 +56,7 @@ export default function FydpApp() {
           <Route path="flagships" element={<FydpFlagships />} />
           <Route path="flagships/:id" element={<FydpFlagship />} />
           <Route path="risks" element={<FydpRisks />} />
+          <Route path="data" element={<FydpData />} />
           <Route path="quiz" element={<FydpQuiz />} />
           <Route path="*" element={<FydpHome />} />
         </Routes>

@@ -11,7 +11,6 @@ import Timeline from './routes/Timeline.jsx'
 import WhatItMeans from './routes/WhatItMeans.jsx'
 import ForYouIntel from './routes/ForYouIntel.jsx'
 import DataPage from './routes/DataPage.jsx'
-import About from './routes/About.jsx'
 import DesignSystem from './routes/DesignSystem.jsx'
 import Debug from './routes/Debug.jsx'
 import DiraQuiz from './routes/DiraQuiz.jsx'
@@ -44,7 +43,7 @@ export default function DiraApp() {
           <Route path="data" element={<DataPage />} />
           <Route path="quiz" element={<DiraQuiz />} />
           <Route path="pro/*" element={<Navigate to="/dira" replace />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" element={<Navigate to="/about" replace />} />
           <Route path="design" element={<DesignSystem />} />
           <Route path="debug" element={<Debug />} />
           <Route path="*" element={<NotFound />} />

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../usePageTitle.js'
+import Reveal from '../components/Reveal.jsx'
 import { useLang } from '../i18n.jsx'
 
 export default function Vision() {
@@ -21,7 +22,7 @@ export default function Vision() {
 
       <hr className="rule rule--strong" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('vision.goalsLabel')}</div>
         <div>
           <p className="measure">{t('vision.goalsIntro')}</p>
@@ -37,11 +38,11 @@ export default function Vision() {
             ))}
           </ol>
         </div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('vision.principlesLabel')}</div>
         <div>
           <p className="measure">{t('vision.principlesIntro')}</p>
@@ -57,11 +58,11 @@ export default function Vision() {
             ))}
           </ol>
         </div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('vision.howLabel')}</div>
         <div className="stack">
           <p className="measure">{t('vision.howBody')}</p>
@@ -70,11 +71,11 @@ export default function Vision() {
             <Link className="btn btn--ghost" to="/dira/targets">{t('vision.btnTargets')}</Link>
           </p>
         </div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('vision.deliveryLabel')}</div>
         <div>
           <p className="measure">{t('vision.deliveryIntro')}</p>
@@ -84,7 +85,7 @@ export default function Vision() {
             ))}
           </ul>
         </div>
-      </section>
+      </Reveal>
     </div>
   )
 }

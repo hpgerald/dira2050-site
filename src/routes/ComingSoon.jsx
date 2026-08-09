@@ -3,9 +3,9 @@ import { useLang } from '../i18n.jsx'
 import { usePageTitle } from '../usePageTitle.js'
 
 /*
-  Placeholder for the document sections not yet built (LTPP, FYDP IV, National
-  Framework, Communication Strategy). Reads its title from the hub strings so it
-  stays consistent, and links back to the landing page.
+  Placeholder for document sections not yet built (currently the Communication
+  Strategy). Reads its title from the hub strings so it stays consistent, and
+  links back to the landing page.
 */
 export default function ComingSoon({ docKey }) {
   const { t } = useLang()

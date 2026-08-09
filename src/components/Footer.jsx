@@ -16,7 +16,7 @@ export default function Footer() {
           <Link to="/dira/targets">{t('footer.targets')}</Link>
           <Link to="/dira/timeline">{t('footer.timeline')}</Link>
           <Link to="/dira/data">{t('footer.data')}</Link>
-          <Link to="/dira/about">{t('footer.about')}</Link>
+          <Link to="/about">{t('footer.about')}</Link>
         </nav>
       </div>
       <p className="footer__fine">{t('footer.fine')}</p>

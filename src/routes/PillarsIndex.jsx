@@ -2,6 +2,7 @@ import { useData } from '../useData.js'
 import { getPillars, getEnablers } from '../lib/data.js'
 import DriverIndex from '../components/Pentagram.jsx'
 import { usePageTitle } from '../usePageTitle.js'
+import Reveal from '../components/Reveal.jsx'
 import { useLang } from '../i18n.jsx'
 
 export default function PillarsIndex() {
@@ -23,7 +24,7 @@ export default function PillarsIndex() {
 
       <hr className="rule rule--strong" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('framework.foundationLabel')}</div>
         <div>
           <p className="measure">{t('framework.foundationIntro')}</p>
@@ -33,21 +34,21 @@ export default function PillarsIndex() {
             ))}
           </ul>
         </div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('framework.pillarsLabel')}</div>
         <div><DriverIndex items={getPillars(data)} basePath="/dira/pillars" ariaLabel={t('framework.pillarsLabel')} /></div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('framework.driversLabel')}</div>
         <div><DriverIndex items={getEnablers(data)} basePath="/dira/enablers" ariaLabel={t('framework.driversLabel')} /></div>
-      </section>
+      </Reveal>
     </div>
   )
 }

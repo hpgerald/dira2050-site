@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useData } from '../useData.js'
 import TargetCard from '../components/TargetCard.jsx'
+import Reveal from '../components/Reveal.jsx'
 import { isNumber } from '../lib/format.js'
 import { usePageTitle } from '../usePageTitle.js'
 import { useLang } from '../i18n.jsx'
@@ -57,9 +58,9 @@ export default function TargetsDashboard() {
 
       <p className="resultcount" aria-live="polite">{t('targets.count')(filtered.length)}</p>
 
-      <div className="tgrid">
+      <Reveal className="tgrid">
         {filtered.map((tg) => <TargetCard key={tg.id} t={tg} />)}
-      </div>
+      </Reveal>
     </div>
   )
 }

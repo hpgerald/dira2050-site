@@ -51,6 +51,14 @@
   .nav__links.is-open { display: flex; }
   .nav__links a { padding: var(--sp-3) 0; border-bottom: var(--rule-thin) solid var(--line); }
 }
+/* Section mastheads (Framework / FYDP / LTPP) have a long brand and 2-3 cross-links
+   but no hamburger; on small screens stack the brand above the links so nothing
+   crowds or overflows. */
+@media (max-width: 620px) {
+  .nav--section .nav__inner { flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+  .nav--section .nav__brand { font-size: var(--fs-300); }
+  .nav--section .nav__right { width: 100%; gap: var(--sp-4); flex-wrap: wrap; }
+}
 
 /* ---------- Index (the Drivers hub) ---------- */
 .index { list-style: none; margin: 0; padding: 0; border-top: var(--rule-thin) solid var(--black); }
@@ -72,6 +80,9 @@
 .stat__value { display: flex; align-items: baseline; gap: .3ch; }
 .stat__num { font-size: var(--fs-700); font-weight: 700; line-height: .9; letter-spacing: var(--tracking-tight); }
 .stat__unit { font-size: var(--fs-300); font-weight: 600; color: var(--ink-soft); }
+.stat__num { display: inline-block; }
+/* Unit on its own line under the number, for cards with long multi-word units */
+.stat__unitline { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); font-weight: 600; margin: var(--sp-2) 0 0; }
 .stat__label { font-weight: 600; margin: var(--sp-3) 0 0; }
 .stat__delta { font-size: var(--fs-100); color: var(--ink-faint); margin: var(--sp-1) 0 0; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 .stat__note { font-size: var(--fs-200); color: var(--ink-soft); margin: var(--sp-2) 0 0; }
@@ -355,11 +366,24 @@
 .nav__hub:hover { color: var(--black); }
 
 /* ================= Document section sub-nav ================= */
-.subnav { background: var(--white); border-bottom: var(--rule-thin) solid var(--line); }
-.subnav__inner { display: flex; gap: var(--sp-5); overflow-x: auto; padding-block: .7rem; -webkit-overflow-scrolling: touch; }
+.subnav { position: relative; background: var(--white); border-bottom: var(--rule-thin) solid var(--line); }
+.subnav__inner { display: flex; align-items: center; padding-block: .7rem; }
+.subnav__links { display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-5); align-items: center; width: 100%; }
 .subnav__link { font-size: var(--fs-100); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--ink-soft); text-decoration: none; white-space: nowrap; padding: .3em 0; border-bottom: var(--rule-thick) solid transparent; }
 .subnav__link:hover { color: var(--black); }
 .subnav__link.is-active { color: var(--black); border-bottom-color: var(--black); }
+/* Mobile: collapse into a hamburger dropdown (no horizontal scrolling) */
+.subnav__toggle { display: none; align-items: center; gap: .5rem; background: none; border: 0; cursor: pointer; padding: 0; color: var(--black); font-size: var(--fs-100); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); }
+.subnav__toggle-ic { display: inline-flex; flex-direction: column; gap: 4px; }
+.subnav__toggle-ic span { width: 20px; height: 2px; background: var(--black); display: block; }
+@media (max-width: 720px) {
+  .subnav__toggle { display: inline-flex; }
+  .subnav__links { position: absolute; top: 100%; left: 0; right: 0; z-index: 20; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 0; background: var(--white); border-bottom: var(--rule-thin) solid var(--black); padding: 0 var(--sp-5) var(--sp-3); display: none; }
+  .subnav__links.is-open { display: flex; }
+  .subnav__links .subnav__link { padding: var(--sp-3) 0; border-bottom: var(--rule-thin) solid var(--line); }
+  .subnav__link--quiz { margin-left: 0; }
+  .subnav__link--quiz::before { content: "★ "; }
+}
 
 /* ================= Interactive delivery cycle ================= */
 .cycle { display: grid; gap: var(--sp-6); grid-template-columns: 1fr; align-items: center; }
@@ -568,7 +592,7 @@
 .quiz-result__msg { color: var(--ink-soft); margin: var(--sp-2) 0 0; }
 .quiz-result .hero__cta { justify-content: center; margin-top: var(--sp-5); }
 
-/* ================= FYDP IV — financing bar ================= */
+/* ================= FYDP IV - financing bar ================= */
 .fbar { margin-top: var(--sp-4); }
 .fbar__track { display: flex; height: 40px; border: var(--rule-thin) solid var(--black); overflow: hidden; }
 .fbar__seg { height: 100%; }
@@ -582,7 +606,7 @@
 .fbar__note { color: var(--ink-faint); font-size: var(--fs-200); }
 @media (max-width: 640px) { .fbar__row { grid-template-columns: 1rem 1fr auto; } .fbar__amt, .fbar__note { grid-column: 2 / -1; } }
 
-/* ================= FYDP IV — from/to trajectory ================= */
+/* ================= FYDP IV - from/to trajectory ================= */
 .fromto { display: grid; gap: var(--sp-5); margin-top: var(--sp-4); }
 .fromto__ind { font-weight: 700; margin: 0 0 var(--sp-2); }
 .fromto__unit { color: var(--ink-faint); font-weight: 400; font-size: var(--fs-200); }
@@ -625,7 +649,7 @@
 .chip--link:hover, .chip--link:focus-visible { background: var(--black); color: #fff; border-color: var(--black); }
 .chip--muted { color: var(--ink-faint); border-style: dashed; }
 
-/* ================= FYDP IV — risk register ================= */
+/* ================= FYDP IV - risk register ================= */
 .risklist { list-style: none; margin: var(--sp-4) 0 0; padding: 0; }
 .riskrow { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); padding: var(--sp-5) 0; border-bottom: var(--rule-thin) solid var(--line); }
 .riskrow__name { font-size: var(--fs-400); margin: 0 0 var(--sp-2); }

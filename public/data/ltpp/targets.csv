@@ -1,0 +1,5 @@
+id,stat,value,unit,note,source_page
+economy,Economy size,1,USD trillion,"A one-trillion-dollar economy by 2050.",10
+percapita,Income per person,"7,000",USD a year,"At least USD 7,000 per person, up from about 1,300 today.",10
+finance,Investment needed,3.6,USD trillion,"Sustained investment over the 25 years, mostly private.",3
+horizon,Time horizon,25,years,"From 2026/27 to 2050/51.",10

@@ -1,10 +1,11 @@
 import { useData } from '../useData.js'
 import { usePageTitle } from '../usePageTitle.js'
+import Reveal from '../components/Reveal.jsx'
 import { useLang } from '../i18n.jsx'
 
 const PDF_URL = {
-  en: 'https://www.planning.go.tz/uploads/documents/en-1752762713-THE%20TANZANIA%20DEVELOPMENT%20VISION%202050.pdf',
-  sw: 'https://www.planning.go.tz/uploads/documents/sw-1756311249-DIRA%20YA%20TAIFA%20YA%20MAENDELEO%202050.pdf',
+  en: import.meta.env.BASE_URL + 'docs/vision-2050-en.pdf',
+  sw: import.meta.env.BASE_URL + 'docs/vision-2050-sw.pdf',
 }
 
 const FILES = [
@@ -38,7 +39,7 @@ export default function DataPage() {
 
       <hr className="rule rule--strong" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('data.downloadLabel')}</div>
         <div>
           <ul className="dllist">
@@ -54,11 +55,11 @@ export default function DataPage() {
             })}
           </ul>
         </div>
-      </section>
+      </Reveal>
 
       <hr className="rule" />
 
-      <section className="cols">
+      <Reveal as="section" className="cols">
         <div className="cols__label">{t('data.methodologyLabel')}</div>
         <div className="stack">
           <p className="measure">{t('data.methodologyBody')}</p>
@@ -67,7 +68,7 @@ export default function DataPage() {
             <a className="btn btn--ghost" href={`${base}DATA_NOTES.md`} target="_blank" rel="noopener noreferrer">{t('data.btnNotes')} ↗</a>
           </p>
         </div>
-      </section>
+      </Reveal>
     </div>
   )
 }
