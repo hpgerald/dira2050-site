@@ -14,7 +14,7 @@ const PLANS = [
   { key: 'fydp', to: '/fydp', live: true },
   { key: 'framework', to: '/framework', live: true },
 ]
-const COMPANION = { key: 'comms', to: '/comms', live: false }
+const COMPANION = { key: 'comms', to: '/comms', live: true }
 
 function HubCard({ c, t }) {
   return (

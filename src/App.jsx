@@ -3,12 +3,12 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import DiraApp from './DiraApp.jsx'
 import Hub from './routes/Hub.jsx'
 import About from './routes/About.jsx'
-import ComingSoon from './routes/ComingSoon.jsx'
 
 // Document sections are lazy-loaded so each downloads only when visited.
 const FrameworkApp = lazy(() => import('./framework/FrameworkApp.jsx'))
 const FydpApp = lazy(() => import('./fydp/FydpApp.jsx'))
 const LtppApp = lazy(() => import('./ltpp/LtppApp.jsx'))
+const CommsApp = lazy(() => import('./comms/CommsApp.jsx'))
 
 /*
   Platform router. The landing page (Hub) owns "/". Each document lives under its
@@ -37,7 +37,7 @@ export default function App() {
       <Route path="/framework/*" element={<Suspense fallback={<div className="container section" />}><FrameworkApp /></Suspense>} />
       <Route path="/fydp/*" element={<Suspense fallback={<div className="container section" />}><FydpApp /></Suspense>} />
       <Route path="/ltpp/*" element={<Suspense fallback={<div className="container section" />}><LtppApp /></Suspense>} />
-      <Route path="/comms/*" element={<ComingSoon docKey="comms" />} />
+      <Route path="/comms/*" element={<Suspense fallback={<div className="container section" />}><CommsApp /></Suspense>} />
       {LEGACY.map((p) => <Route key={p} path={p} element={<LegacyRedirect />} />)}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
