@@ -12,16 +12,30 @@ html.lenis, html.lenis body { height: auto; }
 .reveal { opacity: 0; transform: translateY(var(--reveal-shift)); transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out); }
 .reveal.is-in { opacity: 1; transform: none; }
 
+/* bolder, cinematic variants */
+.reveal--big { transform: translateY(64px) scale(.985); transition-duration: var(--dur-3); }
+.reveal--big.is-in { transform: none; }
+.reveal--rise { transform: translateY(96px); transition-duration: var(--dur-3); }
+.reveal--rise.is-in { transform: none; }
+/* clip: a wipe-up mask for poster headlines */
+.reveal--clip { opacity: 1; transform: none; clip-path: inset(0 0 100% 0); transition: clip-path var(--dur-3) var(--ease-out); }
+.reveal--clip > * { transform: translateY(0.4em); transition: transform var(--dur-3) var(--ease-out); display: inline-block; }
+.reveal--clip.is-in { clip-path: inset(-10% 0 -10% 0); }
+.reveal--clip.is-in > * { transform: none; }
+
 /* ---------- Route transition (cinematic, quiet) ---------- */
 .route-in { animation: routeIn var(--dur-2) var(--ease-out) both; }
 @keyframes routeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal.is-in { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal.is-in,
+  .reveal--big, .reveal--rise, .reveal--clip,
+  .reveal--clip > * { opacity: 1; transform: none; clip-path: none; transition: none; }
   .route-in { animation: none; }
+  .parallax { transform: none !important; }
 }
 
 /* ---------- Skip link ---------- */
@@ -93,7 +107,7 @@ html.lenis, html.lenis body { height: auto; }
 /* ---------- StatCard ---------- */
 .stat { border-top: var(--rule-thick) solid var(--black); padding-top: var(--sp-3); }
 .stat__value { display: flex; align-items: baseline; gap: .3ch; }
-.stat__num { font-family: var(--font-display); font-size: var(--fs-700); font-weight: 600; font-optical-sizing: auto; line-height: .9; letter-spacing: -0.02em; font-variant-numeric: lining-nums; }
+.stat__num { font-family: var(--font-display); font-size: var(--fs-700); font-weight: 600; line-height: .85; letter-spacing: 0; font-variant-numeric: lining-nums; }
 .stat__unit { font-size: var(--fs-300); font-weight: 600; color: var(--ink-soft); }
 .stat__num { display: inline-block; }
 /* Unit on its own line under the number, for cards with long multi-word units */
@@ -127,7 +141,7 @@ html.lenis, html.lenis body { height: auto; }
 
 /* ---------- Hero ---------- */
 .hero { padding-block: clamp(3rem, 2rem + 6vw, 7rem) var(--sp-10); }
-.hero__title { font-family: var(--font-display); font-size: var(--fs-800); font-weight: 600; font-optical-sizing: auto; letter-spacing: -0.025em; line-height: .98; margin: var(--sp-4) 0 0; }
+.hero__title { font-family: var(--font-display); font-size: var(--fs-800); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-poster); line-height: .88; margin: var(--sp-4) 0 0; }
 .hero__lead { font-size: var(--fs-500); line-height: 1.4; color: var(--ink-soft); max-width: 38ch; margin-top: var(--sp-5); font-weight: 400; }
 .hero__facts { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; margin: var(--sp-5) 0 0; padding: 0; }
 .hero__fact { font-size: var(--fs-100); text-transform: uppercase; letter-spacing: .09em; border: var(--rule-thin) solid var(--g-300); border-radius: 999px; padding: .4em .85em; color: var(--ink-soft); white-space: nowrap; }
@@ -351,7 +365,7 @@ html.lenis, html.lenis body { height: auto; }
 .hub__hero { padding-block: clamp(2.5rem, 1.8rem + 4vw, 5rem); }
 .hub__eyebrow { font-size: var(--fs-100); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--hub-green); margin: 0 0 var(--sp-3); white-space: nowrap; }
 @media (max-width: 680px) { .hub__eyebrow { white-space: normal; letter-spacing: var(--tracking-wide); } }
-.hub__title { font-size: var(--fs-700); font-weight: 800; letter-spacing: var(--tracking-tight); line-height: 1.02; margin: 0 0 var(--sp-4); max-width: 20ch; }
+.hub__title { font-family: var(--font-display); font-size: var(--fs-800); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-poster); line-height: .9; margin: 0 0 var(--sp-5); max-width: 16ch; }
 .hub__lead { font-size: var(--fs-400); line-height: 1.5; color: var(--ink-soft); max-width: 60ch; margin: 0; }
 .hub__grid { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); padding-bottom: var(--sp-6); }
 .hub-card { display: flex; flex-direction: column; min-height: 190px; text-decoration: none; color: inherit; background: var(--surface); border: var(--rule-thin) solid var(--line-strong); border-radius: 14px; padding: var(--sp-5); transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out); }
@@ -359,7 +373,7 @@ html.lenis, html.lenis body { height: auto; }
 .hub-card.is-soon { border-color: var(--line); color: var(--ink-soft); }
 .hub-card__status { align-self: flex-start; font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; padding: .25em .7em; border-radius: 999px; border: var(--rule-thin) solid var(--line); color: var(--ink-faint); }
 .hub-card__status.is-live { background: var(--hub-green); color: var(--white); border-color: var(--hub-green); }
-.hub-card__title { font-size: var(--fs-500); font-weight: 800; letter-spacing: var(--tracking-flat); line-height: 1.1; margin: var(--sp-4) 0 var(--sp-2); color: var(--black); }
+.hub-card__title { font-size: var(--fs-500); font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-poster); line-height: 1.02; margin: var(--sp-4) 0 var(--sp-2); color: var(--black); }
 .hub-card.is-soon .hub-card__title { color: var(--ink-soft); }
 .hub-card__tag { font-size: var(--fs-200); color: var(--ink-soft); margin: 0; }
 .hub-card__cta { margin-top: auto; padding-top: var(--sp-4); font-size: var(--fs-100); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--hub-green); }
@@ -371,7 +385,7 @@ html.lenis, html.lenis body { height: auto; }
 .coming { min-height: 70vh; display: grid; place-items: center; text-align: center; background: var(--paper); }
 .coming__inner { padding-block: var(--sp-10); }
 .coming__badge { display: inline-block; font-size: var(--fs-100); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: #0b7a44; border: var(--rule-thin) solid var(--line); border-radius: 999px; padding: .3em 1em; }
-.coming__title { font-size: var(--fs-700); font-weight: 800; letter-spacing: var(--tracking-tight); line-height: 1.05; margin: var(--sp-4) 0 var(--sp-3); }
+.coming__title { font-family: var(--font-display); font-size: var(--fs-700); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-poster); line-height: .95; margin: var(--sp-4) 0 var(--sp-3); }
 .coming__tag { font-size: var(--fs-400); color: var(--ink-soft); margin: 0 auto var(--sp-4); max-width: 46ch; }
 .coming__body { color: var(--ink-soft); max-width: 52ch; margin: 0 auto var(--sp-6); }
 .coming__back { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: var(--fs-100); color: var(--black); text-decoration: none; border-bottom: var(--rule-thick) solid var(--black); padding-bottom: 2px; }
@@ -691,7 +705,7 @@ html.lenis, html.lenis body { height: auto; }
   border-radius: 18px;
 }
 .bhero__kicker { font-family: var(--font-mono); font-size: var(--fs-100); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--accent); margin: 0; }
-.bhero__title { font-size: var(--fs-700); line-height: .98; margin: var(--sp-3) 0 var(--sp-4); }
+.bhero__title { font-size: var(--fs-700); text-transform: uppercase; letter-spacing: var(--tracking-poster); line-height: .9; margin: var(--sp-3) 0 var(--sp-4); }
 .bhero__lead { font-size: var(--fs-400); line-height: 1.5; color: var(--ink-soft); max-width: 42ch; margin: 0 0 var(--sp-6); }
 
 /* numeric spine: today → goal */
@@ -699,7 +713,7 @@ html.lenis, html.lenis body { height: auto; }
 .bhero__node { display: flex; flex-direction: column; gap: .2em; }
 .bhero__node--goal { text-align: right; }
 .bhero__node-lab { font-family: var(--font-mono); font-size: var(--fs-100); text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); }
-.bhero__node-val { font-family: var(--font-display); font-weight: 600; font-optical-sizing: auto; line-height: 1; letter-spacing: -0.02em; font-size: var(--fs-500); }
+.bhero__node-val { font-family: var(--font-display); font-weight: 600; line-height: 1; letter-spacing: 0; font-size: var(--fs-500); text-transform: uppercase; }
 .bhero__node-val--now { color: var(--ink-soft); }
 .bhero__node-val--goal { color: var(--accent); }
 .bhero__gap { display: flex; flex-direction: column; align-items: center; gap: .1em; padding-bottom: .1em; }
@@ -750,4 +764,106 @@ html.lenis, html.lenis body { height: auto; }
   .bhero__spine { grid-template-columns: 1fr; gap: var(--sp-3); text-align: left; }
   .bhero__node--goal { text-align: left; }
   .bhero__gap { flex-direction: row; align-items: baseline; gap: .5ch; }
+}
+
+/* ================= Vision: the size of the climb (slopegraph) ================= */
+.vclimb { margin: 0; padding: var(--sp-6); background: var(--surface); border: var(--rule-thin) solid var(--line-strong); border-radius: 16px; }
+.vclimb__cap { margin-bottom: var(--sp-4); }
+.vclimb__kicker { font-family: var(--font-mono); font-size: var(--fs-100); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--accent); }
+.vclimb__title { font-size: var(--fs-500); margin: var(--sp-2) 0 var(--sp-3); }
+.vclimb__lead { color: var(--ink-soft); font-size: var(--fs-300); margin: 0 0 var(--sp-4); }
+.vclimb__legend { list-style: none; display: flex; flex-wrap: wrap; gap: var(--sp-4); margin: 0; padding: 0; font-family: var(--font-mono); font-size: var(--fs-100); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); }
+.vclimb__legend li { display: inline-flex; align-items: center; gap: .5ch; }
+.vclimb__key { width: 14px; height: 0; border-top-width: 3px; border-top-style: solid; }
+.vclimb__key--rise { border-top-color: var(--accent); }
+.vclimb__key--fall { border-top-color: var(--g-500); }
+.vclimb__key--zero { border-top-style: dashed; border-top-color: var(--g-500); }
+
+.vclimb__svg { width: 100%; height: auto; display: block; overflow: visible; }
+.vclimb__grid { stroke: var(--line); stroke-width: 1; }
+.vclimb__ref { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 2 4; }
+.vclimb__axis { font-family: var(--font-mono); font-size: 11px; fill: var(--ink-faint); }
+.vclimb__reflab { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; fill: var(--ink-faint); }
+.vclimb__now { fill: var(--ink); }
+
+.vclimb__stem { stroke-width: 3; stroke-linecap: round; }
+.vclimb__dot { r: 5; }
+.vclimb__dot--hollow { fill: var(--surface); stroke-width: 2.5; }
+.vclimb__col--rise .vclimb__stem { stroke: var(--accent); }
+.vclimb__col--rise .vclimb__dot { fill: var(--accent); }
+.vclimb__col--fall .vclimb__stem { stroke: var(--g-500); }
+.vclimb__col--fall .vclimb__dot { fill: var(--g-500); }
+.vclimb__col--zero .vclimb__stem { stroke: var(--g-500); stroke-dasharray: 3 4; }
+.vclimb__col--zero .vclimb__dot--hollow { stroke: var(--g-500); }
+
+.vclimb__change { font-family: var(--font-display); font-weight: 600; font-size: 17px; fill: var(--ink); }
+.vclimb__col--rise .vclimb__change { fill: var(--accent); }
+.vclimb__val { font-family: var(--font-mono); font-size: 10.5px; fill: var(--ink-faint); }
+.vclimb__catlab { font-size: 10.5px; fill: var(--ink-soft); font-weight: 600; }
+.vclimb__note { font-size: var(--fs-100); line-height: 1.5; color: var(--ink-faint); margin: var(--sp-4) 0 0; }
+
+@media (max-width: 560px) {
+  .vclimb { padding: var(--sp-4); }
+  .vclimb__catlab { font-size: 9px; }
+  .vclimb__change { font-size: 14px; }
+}
+
+/* ================= LTPP: the 25-year climb ================= */
+.lclimb { margin: 0; padding: var(--sp-6); background: var(--surface); border: var(--rule-thin) solid var(--line-strong); border-radius: 16px; }
+.lclimb__svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lclimb__base { stroke: var(--ink); stroke-width: 1.5; }
+.lclimb__bar { fill: var(--accent-tint); stroke: var(--accent-soft); stroke-width: 1; }
+.lclimb__col.is-current .lclimb__bar { fill: var(--accent); stroke: var(--accent-deep); }
+.lclimb__roman { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .02em; font-size: 15px; fill: var(--ink); }
+.lclimb__col.is-current .lclimb__roman { fill: var(--accent); }
+.lclimb__years { font-family: var(--font-mono); font-size: 10.5px; fill: var(--ink-faint); }
+.lclimb__ascent { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.lclimb__node { fill: var(--accent); }
+.lclimb__camp-lab, .lclimb__summit-lab { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; fill: var(--ink-faint); }
+.lclimb__camp-val { font-family: var(--font-mono); font-size: 11px; fill: var(--ink-soft); }
+.lclimb__summit-val { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .01em; font-size: 15px; fill: var(--accent); }
+.lclimb__summit-sub { font-family: var(--font-mono); font-size: 10.5px; fill: var(--ink-faint); }
+.lclimb__note { font-size: var(--fs-100); line-height: 1.5; color: var(--ink-faint); margin: var(--sp-4) 0 0; }
+@media (max-width: 560px) {
+  .lclimb { padding: var(--sp-4); }
+  .lclimb__roman { font-size: 12px; }
+  .lclimb__camp-val, .lclimb__summit-val { font-size: 11px; }
+}
+
+/* ================= FYDP IV: the 48-pathway system ================= */
+.fsys { margin: 0; padding: var(--sp-5); background: var(--surface); border: var(--rule-thin) solid var(--line-strong); border-radius: 16px; }
+.fsys__svg { width: 100%; height: auto; display: block; overflow: visible; }
+.fsys__line { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+.fsys__spoke:hover .fsys__line { stroke: var(--accent-deep); stroke-width: 5; }
+.fsys__tip { fill: var(--accent); }
+.fsys__arc { fill: none; stroke: var(--accent-deep); stroke-width: 4; stroke-linecap: round; }
+.fsys__cllab { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .02em; font-size: 14px; fill: var(--ink); }
+.fsys__clnum { font-family: var(--font-mono); font-size: 11px; fill: var(--ink-faint); }
+.fsys__hub { fill: var(--accent); }
+.fsys__hub-num { font-family: var(--font-display); font-weight: 700; font-size: 34px; fill: var(--paper); }
+.fsys__hub-lab { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; fill: var(--paper); }
+.fsys__note { font-size: var(--fs-100); line-height: 1.5; color: var(--ink-faint); margin: var(--sp-4) 0 0; }
+@media (max-width: 560px) {
+  .fsys { padding: var(--sp-3); }
+  .fsys__cllab { font-size: 12px; }
+  .fsys__hub-num { font-size: 28px; }
+}
+
+/* ================= FYDP IV: money flow (sources -> envelope -> clusters) ================= */
+.mflow { margin: 0; padding: var(--sp-5); background: var(--surface); border: var(--rule-thin) solid var(--line-strong); border-radius: 16px; }
+.mflow__svg { width: 100%; height: auto; display: block; overflow: visible; }
+.mflow__head { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; fill: var(--ink-faint); }
+.mflow__ribbon { fill: var(--accent); fill-opacity: .4; }
+.mflow__trunk { fill: var(--accent-deep); }
+.mflow__src { fill: var(--accent); }
+.mflow__dest { fill: var(--accent-soft); }
+.mflow__name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .01em; font-size: 14px; fill: var(--ink); }
+.mflow__val { font-family: var(--font-mono); font-size: 10.5px; fill: var(--ink-faint); }
+.mflow__dname { font-size: 12px; fill: var(--ink-soft); font-weight: 600; }
+.mflow__dval { font-family: var(--font-mono); font-size: 10px; font-weight: 400; fill: var(--ink-faint); }
+.mflow__note { font-size: var(--fs-100); line-height: 1.5; color: var(--ink-faint); margin: var(--sp-4) 0 0; }
+@media (max-width: 560px) {
+  .mflow { padding: var(--sp-3); }
+  .mflow__name { font-size: 12px; }
+  .mflow__dname { font-size: 10.5px; }
 }

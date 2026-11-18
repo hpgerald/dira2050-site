@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Parallax from '../components/Parallax.jsx'
 
 /*
   Flagship set-piece for the platform landing: "the distance to a trillion".
@@ -103,7 +104,7 @@ export default function BearingHero({ t }) {
         <p className="bhero__source">{t('hub.bearing.source')}</p>
       </div>
 
-      <div className="bhero__compass" aria-hidden="true">
+      <Parallax className="bhero__compass" speed={0.1} aria-hidden="true">
         <svg viewBox="0 0 380 380" className="bhero__dial" role="presentation">
           {/* outer ring */}
           <circle cx={CX} cy={CY} r={R} className="bhero__ring" />
@@ -132,7 +133,7 @@ export default function BearingHero({ t }) {
           <text x={tipX} y={tipY} className="bhero__dial-lab bhero__dial-lab--goal" textAnchor="middle">2050</text>
         </svg>
         <p className="bhero__compass-cap">{t('hub.bearing.needle')}</p>
-      </div>
+      </Parallax>
     </section>
   )
 }

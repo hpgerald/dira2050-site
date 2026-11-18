@@ -7,8 +7,12 @@ import { useRef, useEffect, useState } from 'react'
   user's "reduce motion" setting by showing content immediately.
 
   Usage: <Reveal as="li" className="goal" delay={i * 60}> ... </Reveal>
+         <Reveal variant="clip" as="h2"> Big headline </Reveal>
+
+  variant: '' (fade-up, default) | 'big' (larger lift + settle) | 'clip'
+  (wipe-up mask, for poster headlines) | 'rise' (stronger upward motion).
 */
-export default function Reveal({ as: As = 'div', className = '', delay = 0, style, children, ...rest }) {
+export default function Reveal({ as: As = 'div', className = '', variant = '', delay = 0, style, children, ...rest }) {
   const ref = useRef(null)
   const [inView, setInView] = useState(false)
 
@@ -19,15 +23,16 @@ export default function Reveal({ as: As = 'div', className = '', delay = 0, styl
     if (reduce || !('IntersectionObserver' in window)) { setInView(true); return undefined }
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { setInView(true); io.disconnect() } })
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 })
     io.observe(el)
     return () => io.disconnect()
   }, [])
 
+  const v = variant ? ` reveal--${variant}` : ''
   return (
     <As
       ref={ref}
-      className={`reveal ${inView ? 'is-in' : ''} ${className}`.trim()}
+      className={`reveal${v} ${inView ? 'is-in' : ''} ${className}`.trim()}
       style={{ ...(delay ? { transitionDelay: `${delay}ms` } : null), ...style }}
       {...rest}
     >

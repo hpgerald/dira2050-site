@@ -4,6 +4,7 @@ import { usePageTitle } from '../usePageTitle.js'
 import Reveal from '../components/Reveal.jsx'
 import FinanceBar from './FinanceBar.jsx'
 import AllocBars from './AllocBars.jsx'
+import FydpMoneyFlow from './FydpMoneyFlow.jsx'
 
 const MORE = [
   { to: '/fydp/financing/instruments', n: '01', name: 'Innovative instruments', desc: 'SEZs, diaspora and green bonds, carbon credits and more, worth TZS 42 to 62 trillion.' },
@@ -26,6 +27,8 @@ export default function FydpFinancing() {
           <p className="lede measure">About USD 183 billion over five years. Unusually, the plan expects the private sector, not the treasury, to provide the bulk of it.</p>
         </div>
       </Reveal>
+
+      <Reveal variant="big"><FydpMoneyFlow financing={financing} allocation={allocation} /></Reveal>
 
       <hr className="rule" />
 

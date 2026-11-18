@@ -136,6 +136,19 @@ const en = {
     count: (n) => `${n} target${n === 1 ? '' : 's'}`,
     now: 'Now', goal: '2050', of: 'of',
     tagEliminate: 'Eliminate', tagReduce: 'Reduce', tagIncrease: 'Increase', tagGrow: 'Grow',
+    climb: {
+      kicker: 'The size of the climb',
+      title: 'How far each 2050 target reaches',
+      lead: 'Each indicator is indexed to today = 100, so the lines compare the scale of the leap, not the units. Some must multiply many times over; others must fall to zero.',
+      todayRef: 'Today = 100',
+      mustRise: 'Must rise', mustFall: 'Must fall', eliminated: 'To zero',
+      toZero: 'to zero',
+      note: 'Indexed to each indicator’s current value (100), log scale. Baselines are 2022 to 2024; targets are for 2050. Figures from Tanzania Development Vision 2050.',
+      labels: {
+        t12: 'Electricity / person', t2: 'Income / person', t14: 'Rural water',
+        t15: 'Urban water', t24: 'Grid losses', t4: 'Extreme poverty', t9: 'Maternal deaths',
+      },
+    },
   },
   timeline: {
     label: 'Timeline', title: 'From 2000 to 2050.',
@@ -371,6 +384,19 @@ const sw = {
     count: (n) => `Shabaha ${n}`,
     now: 'Sasa', goal: '2050', of: 'kati ya',
     tagEliminate: 'Kutokomeza', tagReduce: 'Kupunguza', tagIncrease: 'Kuongeza', tagGrow: 'Kukua',
+    climb: {
+      kicker: 'Ukubwa wa safari',
+      title: 'Kila shabaha ya 2050 inafika mbali kiasi gani',
+      lead: 'Kila kiashiria kimewekwa kwa kipimo cha leo = 100, ili mistari ilinganishe ukubwa wa hatua, si vipimo. Vingine lazima viongezeke mara nyingi; vingine lazima vishuke hadi sifuri.',
+      todayRef: 'Leo = 100',
+      mustRise: 'Lazima kupanda', mustFall: 'Lazima kushuka', eliminated: 'Hadi sifuri',
+      toZero: 'hadi sifuri',
+      note: 'Kimewekwa kwa kipimo cha thamani ya sasa ya kila kiashiria (100), kipimo cha logarithmu. Misingi ni 2022 hadi 2024; shabaha ni za 2050. Takwimu kutoka Dira ya Maendeleo ya Tanzania 2050.',
+      labels: {
+        t12: 'Umeme kwa mtu', t2: 'Kipato kwa mtu', t14: 'Maji vijijini',
+        t15: 'Maji mijini', t24: 'Upotevu wa gridi', t4: 'Umaskini uliokithiri', t9: 'Vifo vya uzazi',
+      },
+    },
   },
   timeline: {
     label: 'Ratiba', title: 'Kuanzia 2000 hadi 2050.',

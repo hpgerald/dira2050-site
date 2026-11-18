@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useFydp } from './data.js'
 import { usePageTitle } from '../usePageTitle.js'
 import Reveal from '../components/Reveal.jsx'
+import FydpSystem from './FydpSystem.jsx'
 
 export default function FydpSectors() {
   usePageTitle('Strategic pathways · FYDP IV', 'All forty-eight pathways across the economy, people, environment, enablers and governance.')
@@ -29,6 +30,8 @@ export default function FydpSectors() {
           <p className="lede measure">FYDP IV works through forty-eight strategic pathways, grouped into six clusters. Together they cover the whole economy, its people, its environment, its enablers and how the country is governed.</p>
         </div>
       </Reveal>
+
+      <Reveal variant="big"><FydpSystem pathways={pathways} /></Reveal>
 
       <hr className="rule rule--strong" />
 

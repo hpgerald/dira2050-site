@@ -3,6 +3,7 @@ import { useLtpp } from './data.js'
 import { usePageTitle } from '../usePageTitle.js'
 import Reveal from '../components/Reveal.jsx'
 import PlanTimeline from '../framework/PlanTimeline.jsx'
+import LtppClimb from './LtppClimb.jsx'
 
 export default function LtppRoadmap() {
   usePageTitle('The roadmap · LTPP 2050', 'The 25 years as five successive five-year plans, and the theory of change behind them.')
@@ -32,6 +33,8 @@ export default function LtppRoadmap() {
           <p className="lede measure">The LTPP runs from 2026/27 to 2050/51 and is delivered through five successive Five-Year Development Plans. Each carries a leg of the journey; FYDP IV is the first, and it is already underway.</p>
         </div>
       </Reveal>
+
+      <Reveal variant="big"><LtppClimb roadmap={roadmap} /></Reveal>
 
       <hr className="rule" />
 

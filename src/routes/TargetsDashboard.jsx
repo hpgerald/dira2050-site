@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useData } from '../useData.js'
 import TargetCard from '../components/TargetCard.jsx'
+import VisionClimb from '../components/VisionClimb.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { isNumber } from '../lib/format.js'
 import { usePageTitle } from '../usePageTitle.js'
@@ -40,6 +41,12 @@ export default function TargetsDashboard() {
           <p className="measure">{t('targets.intro')(measurable)}</p>
         </div>
       </div>
+
+      <Reveal>
+        <VisionClimb t={t} targets={data.targets} />
+      </Reveal>
+
+      <hr className="rule" />
 
       <div className="filterbar" role="group" aria-label={t('targets.label')}>
         {FILTERS.map((f) => {
