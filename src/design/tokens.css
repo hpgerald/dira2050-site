@@ -1,33 +1,49 @@
 /* ============================================================
    Dira 2050 - Design tokens
-   Editorial system inspired by Pentagram: neo-grotesque type, strict
-   grid, thin rules, generous whitespace. Monochrome only - black,
-   white, grey. Meaning comes from typography and layout, not colour.
+   Editorial system: Source Serif 4 display + Inter body + IBM Plex
+   Mono for kickers and the compass/bearing motif. Warm paper + ink, with a
+   single signature green accent that carries meaning: grey = "now",
+   accent = the 2050 goal / the bearing we steer toward. Dira means
+   compass. Inspired by Locomotive, Immersive Garden, Hello Monday
+   and NYT data journalism.
    ============================================================ */
 :root {
-  /* --- Monochrome palette --- */
-  --black:  #111111;
+  /* --- Ink + paper palette --- */
+  --black:  #16130d;        /* warm near-black ink */
   --white:  #ffffff;
-  --g-900:  #1a1a1a;
-  --g-700:  #3d3d3d;
-  --g-500:  #767676;
-  --g-400:  #9a9a9a;
-  --g-300:  #c9c9c9;
-  --g-200:  #e4e4e4;
-  --g-100:  #f3f3f1;
+  --g-900:  #211d16;
+  --g-700:  #4a443a;
+  --g-500:  #7c756a;
+  --g-400:  #a39c90;
+  --g-300:  #cdc7ba;
+  --g-200:  #e6e0d4;
+  --g-100:  #efeade;
+
+  /* Warm paper - the signature surface */
+  --paper:        #f7f3ea;
+  --paper-deep:   #efe9db;
+  --paper-raised: #fdfbf5;
+
+  /* Signature accent - deep editorial green = "2050 / the bearing" */
+  --accent:       #1f6b4a;
+  --accent-deep:  #164e36;
+  --accent-soft:  #4e9472;
+  --accent-tint:  #e2ece5;
+  --accent-wash:  #eef4ef;
 
   --ink:       var(--black);
   --ink-soft:  var(--g-700);
-  --ink-faint: #6b6b6b;   /* darkened from #767676 for comfortable small-caption contrast (AA) */
-  --bg:        var(--white);
-  --bg-sunken: var(--g-100);
-  --surface:   var(--white);
+  --ink-faint: #6b6459;   /* comfortable small-caption contrast on paper (AA) */
+  --bg:        var(--paper);
+  --bg-sunken: var(--paper-deep);
+  --surface:   var(--paper-raised);
   --line:      var(--g-200);
   --line-strong: var(--black);
 
-  /* --- Typography: neo-grotesque --- */
+  /* --- Typography: editorial display + grotesque body + mono motif --- */
   --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: var(--font-sans);
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, monospace;
 
   /* Editorial type scale - large, tight, confident */
   --fs-100: 0.75rem;
@@ -55,6 +71,13 @@
 
   --maxw: 1200px;
   --ease: cubic-bezier(.16,.84,.44,1);
+  --ease-out: cubic-bezier(.22,1,.36,1);
+
+  /* Motion - cinematic but restrained */
+  --dur-1: 240ms;
+  --dur-2: 560ms;
+  --dur-3: 900ms;
+  --reveal-shift: 24px;
 
   /* Rules */
   --rule-thin: 1px;
@@ -76,28 +99,30 @@ body {
 }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
+  font-optical-sizing: auto;
   line-height: var(--lh-heading);
   letter-spacing: var(--tracking-tight);
   margin: 0 0 0.4em;
 }
-h1 { font-size: var(--fs-700); line-height: var(--lh-tight); }
+h1 { font-size: var(--fs-700); line-height: var(--lh-tight); letter-spacing: -0.02em; }
 h2 { font-size: var(--fs-600); }
 h3 { font-size: var(--fs-500); letter-spacing: var(--tracking-flat); }
 p { margin: 0 0 1em; max-width: 66ch; }
 a { color: var(--ink); text-decoration: none; }
 strong { font-weight: 600; }
 
-::selection { background: var(--black); color: var(--white); }
-:focus-visible { outline: var(--rule-thick) solid var(--black); outline-offset: 3px; }
+::selection { background: var(--accent); color: var(--paper); }
+:focus-visible { outline: var(--rule-thick) solid var(--accent); outline-offset: 3px; }
 
-/* Eyebrow / kicker */
+/* Eyebrow / kicker - mono, the compass-bearing motif */
 .eyebrow {
+  font-family: var(--font-mono);
   font-size: var(--fs-100);
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--ink-faint);
+  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

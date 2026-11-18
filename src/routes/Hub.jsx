@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import { usePageTitle } from '../usePageTitle.js'
+import BearingHero from './BearingHero.jsx'
 
 /*
   Platform landing page. Four planning documents form the spine (vision → 25-year
@@ -48,6 +49,10 @@ export default function Hub() {
         <p className="hub__eyebrow">{t('hub.eyebrow')}</p>
         <h1 className="hub__title">{t('hub.title')}</h1>
         <p className="hub__lead">{t('hub.lead')}</p>
+      </div>
+
+      <div className="container">
+        <BearingHero t={t} />
       </div>
 
       <div className="container hub__grid">
