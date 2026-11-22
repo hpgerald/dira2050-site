@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import App from './App.jsx'
+import ScrollProgress from './components/ScrollProgress.jsx'
 import { LanguageProvider } from './i18n.jsx'
 import './design/tokens.css'
 import './design/components.css'
@@ -60,6 +61,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <LanguageProvider>
         <SmoothScroll />
         <ScrollToTop />
+        <ScrollProgress />
         <RouteTransition>
           <App />
         </RouteTransition>

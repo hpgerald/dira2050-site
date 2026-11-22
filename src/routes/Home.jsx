@@ -23,7 +23,7 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <Reveal as="span" className="eyebrow">{t('home.eyebrow')}</Reveal>
-          <Reveal as="h1" className="hero__title" delay={80}>{t('home.titleA')}<br />{t('home.titleB')}</Reveal>
+          <Reveal as="h1" variant="clip" className="hero__title" delay={80}>{t('home.titleA')}<br />{t('home.titleB')}</Reveal>
           <Reveal as="p" className="hero__lead" delay={160}>{t('home.lead')}</Reveal>
           <Reveal as="ul" className="hero__facts" delay={220}>
             {t('home.facts').map((f) => <li key={f} className="hero__fact">{f}</li>)}

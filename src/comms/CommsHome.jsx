@@ -17,7 +17,7 @@ export default function CommsHome() {
     <div className="container section stack">
       <section className="hero hero--flush">
         <Reveal as="p" className="cols__label">President’s Office · Planning and Investment · National Planning Commission</Reveal>
-        <Reveal as="h1" className="hero__title" delay={80}>Reaching every citizen</Reveal>
+        <Reveal as="h1" variant="clip" className="hero__title" delay={80}>Reaching every citizen</Reveal>
         <Reveal as="p" className="hero__lead" delay={160}>A plan is only as strong as the people behind it. The Communication Strategy sets out how Dira 2050 is explained, shared and owned, from the national broadcast to the village baraza.</Reveal>
         <Reveal className="hero__cta" delay={240}>
           <Link className="btn" to="/comms/framework">See the framework</Link>

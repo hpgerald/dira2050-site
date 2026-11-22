@@ -17,7 +17,7 @@ export default function LtppHome() {
     <div className="container section stack">
       <section className="hero hero--flush">
         <Reveal as="p" className="cols__label">President’s Office · Planning and Investment · National Planning Commission</Reveal>
-        <Reveal as="h1" className="hero__title" delay={80}>The 25-year road to 2050</Reveal>
+        <Reveal as="h1" variant="clip" className="hero__title" delay={80}>The 25-year road to 2050</Reveal>
         <Reveal as="p" className="hero__lead" delay={160}>Vision 2050 says where Tanzania is going. The Long-Term Perspective Plan says how it gets there: sequenced, financed and accountable.</Reveal>
         <Reveal className="hero__cta" delay={240}>
           <Link className="btn" to="/ltpp/roadmap">See the roadmap</Link>

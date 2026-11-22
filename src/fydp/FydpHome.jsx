@@ -19,7 +19,7 @@ export default function FydpHome() {
     <div className="container section stack">
       <section className="hero hero--flush">
         <Reveal as="p" className="cols__label">President’s Office · Planning and Investment · June 2026</Reveal>
-        <Reveal as="h1" className="hero__title" delay={80}>The first five years of Vision 2050</Reveal>
+        <Reveal as="h1" variant="clip" className="hero__title" delay={80}>The first five years of Vision 2050</Reveal>
         <Reveal as="p" className="hero__lead" delay={160}>FYDP IV runs 2026/27 to 2030/31: reforms for inclusive economic growth and employment creation.</Reveal>
         <Reveal className="hero__cta" delay={240}>
           <Link className="btn" to="/fydp/flagships">See the flagship programmes</Link>

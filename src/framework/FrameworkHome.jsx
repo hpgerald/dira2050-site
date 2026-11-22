@@ -19,7 +19,7 @@ export default function FrameworkHome() {
     <div className="container section stack">
       <section className="hero hero--flush">
         <Reveal as="p" className="cols__label">National Planning Commission · June 2026</Reveal>
-        <Reveal as="h1" className="hero__title" delay={80}>How Tanzania’s plans actually get delivered</Reveal>
+        <Reveal as="h1" variant="clip" className="hero__title" delay={80}>How Tanzania’s plans actually get delivered</Reveal>
         <Reveal as="p" className="hero__lead" delay={160}>The machine behind the plans: it turns Vision 2050 into results, and tracks whether the country is on course.</Reveal>
         <Reveal className="hero__cta" delay={240}>
           <Link className="btn" to="/framework/cycle">See the delivery cycle</Link>

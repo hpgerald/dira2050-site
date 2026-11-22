@@ -1,4 +1,5 @@
 import { isNumber } from '../lib/format.js'
+import CountUp from './CountUp.jsx'
 
 /*
   StatCard - a single figure, editorial style. Big tight number over a thin
@@ -10,7 +11,9 @@ export default function StatCard({ value, unit, label, note, baseline, baselineY
   return (
     <article className="stat">
       <div className="stat__value">
-        <span className="stat__num">{isNumber(display) ? Number(display).toLocaleString('en-US') : display}</span>
+        {isNumber(display)
+          ? <CountUp className="stat__num" value={Number(display)} />
+          : <span className="stat__num">{display}</span>}
         {unit && <span className="stat__unit">{unit}</span>}
       </div>
       <p className="stat__label">{label}</p>
